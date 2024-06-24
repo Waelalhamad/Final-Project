@@ -6,6 +6,7 @@
   scroll-behavior: smooth;
   font-family: "Poppins", sans-serif;
   text-decoration: none;
+  list-style: none;
 }
 
 :root {
@@ -47,6 +48,9 @@
   --transition-3: 1s ease;
 }
 
+body {
+  height: 100vh;
+}
 /* -------------- CUSTOM ALERT STYLE -------------- */
 
 .custom-alert {
@@ -73,5 +77,86 @@
   z-index: 100;
 }
 
+/* --------------  Top Nav STYLE -------------- */
 
 /* --------------  Navigation Bar STYLE -------------- */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 80px;
+  background-color: var(--primary-color);
+  box-shadow: var(--box-shadow);
+}
+
+.logo-img {
+  width: 100px;
+  height: auto;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-links li {
+  margin: 0 20px;
+}
+
+.nav-links li a {
+  color: var(--text-color);
+  font-size: var(--base-size);
+  font-weight: var(--font-medium);
+  transition: color var(--transition-1);
+}
+
+.nav-links li a:hover {
+  color: var(--primary-color);
+}
+
+.favorite,
+.cart {
+  color: var(--text-color);
+  font-size: var(--h3-size);
+  margin-left: var(--spacing-medium);
+  transition: color var(--transition-1);
+}
+
+.favorite:hover,
+.cart:hover {
+  color: var(--primary-color);
+}
+
+.favorite ion-icon,
+.cart ion-icon {
+  vertical-align: middle;
+}
+
+/* --------------  WhatsApp Icon STYLE -------------- */
+
+.whatsapp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 5%;
+  right: 3%;
+  width: 64px;
+  height: 64px;
+  text-align: center;
+  font-size: var(--h1-size);
+  background-color: #59ce72;
+  border-radius: var(--radius-circle);
+  transition: var(--transition-1);
+  cursor: pointer;
+}
+
+.whatsapp:hover {
+  transform: scale(1.1);
+  background-color: #000;
+  color: #fff;
+}
+
+.whatsapp-icon {
+  color: #fff;
+}

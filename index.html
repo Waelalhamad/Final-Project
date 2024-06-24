@@ -3,10 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Description Tag ( Improve SEO ) -->
+    <!-- Description Tag ( Improve SEO ) ****Should be change**** -->
     <meta
       name="description"
       content="Explore exquisite flavors and exceptional dining at [Restaurant Name]. Our menu offers a delightful blend of local ingredients and global inspiration, served in a welcoming atmosphere. Join us for a culinary journey that celebrates freshness, quality, and creativity in every dish. Book your table today and indulge in a memorable dining experience in Mexico."
+    />
+    <!-- KeyWods Tag ( Improve SEO ) ****Should be change**** -->
+    <meta
+      name="keywords"
+      content="restaurante, comida mexicana, tacos, enchiladas, pozole, comida gourmet, comida tradicional, restaurante familiar, cocina mexicana, restaurante en México, chef, gastronomía mexicana, tacos al pastor, antojitos mexicanos, restaurante de mariscos, cena romántica, comida típica mexicana, restaurante con terraza, comida internacional, tacos de carnitas, menú del día, bebidas mexicanas, comida vegetariana, restaurante bar, comida saludable, restaurante cerca de [tu ciudad], reservaciones restaurante, cena de negocios, comida para llevar, postres mexicanos"
     />
     <!-- Website Title -->
     <title>Gadel</title>
@@ -17,85 +22,47 @@
   </head>
   <body>
     <!-- Header -->
+    <header class="main-header">
+      <a href="#" class="logo">
+        <img src="images/logo.jpg" alt="Logo" class="logo-img">
+      </a>
+      <nav class="main-nav">
+        <ul class="nav-links">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#menu" class="nav-link">Menu</a></li>
+          <li><a href="#reviews" class="nav-link">Reviews</a></li>
+          <li><a href="#location" class="nav-link">Location</a></li>
+          <li><a href="#booking" class="nav-link">Booking</a></li>
+        </ul>
+      </nav>
+      <div class="nav-icons">
+        <a href="#" class="favorite">
+          <ion-icon name="heart-outline" class="favorite-icon"></ion-icon>
+        </a>
+        <a href="#" class="cart">
+          <ion-icon name="cart-outline" class="cart-icon"></ion-icon>
+        </a>
+      </div>
+    </header>
+    
 
     <!-- Custom Alert Card -->
     <div id="custom-alert" class="custom-alert">
       <span id="alert-message"></span>
     </div>
 
-    <!-- Custom Bottom Navbar for Mobile Screen -->
-    <nav class="bottom-navbar">
-      <a href="#" class="nav-item active" id="home">
-        <ion-icon name="home-outline"></ion-icon>
-      </a>
-      <a href="#" class="nav-item">
-        <ion-icon name="newspaper-outline"></ion-icon>
-      </a>
-      <a href="#" class="nav-item add" id="showAdd">
-        <ion-icon name="cart-outline"></ion-icon>
-      </a>
-      <a href="#" class="nav-item">
-        <ion-icon name="heart-outline"></ion-icon>
-      </a>
-      <a href="#" class="nav-item" onclick="hideHome()">
-        <ion-icon name="person-outline"></ion-icon>
-      </a>
-    </nav>
-
     <!-- Footer -->
-    <footer>
-        <div class="container">
-          <div class="logo-container">
-            <a href="#" class="logo"><span>Bite</span>Joy.</a>
-          </div>
-          <div class="contact">
-            <h3>Contact Us</h3>
-            <p>
-              <a href="mailto:contact@bitejoy.com" class="io"
-                ><i class="fa-solid fa-envelope"></i
-              ></a>
-              contact@bitejoy.com
-            </p>
-            <p>
-              <a href="tell:091" class="io"><i class="fa-solid fa-phone"></i></a>
-              Phone: +961 03 313 616
-            </p>
-            <p>
-              <a href="google.com/maps" target="_blank" class="io"
-                ><i class="fa-solid fa-location-dot"></i
-              ></a>
-              Address: Maps ,Zahle, Lebanon
-            </p>
-          </div>
-          <div class="quick-links">
-            <h3>Quick Links</h3>
-            <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="index.html#about">About</a></li>
-              <li><a href="menu.html">Menu</a></li>
-              <li><a href="index.html#locate">Locate</a></li>
-              <li><a href="index.html#contact">Contact</a></li>
-            </ul>
-          </div>
-          <div class="social-media">
-            <h3>Follow Us</h3>
-            <div class="social-media">
-              <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-              <a href="#"><i class="fa-brands fa-instagram"></i></a>
-              <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-              <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <div class="para">
-            <p>
-              &copy; 2024 <span>Bite</span>Joy. All rights reserved. Website By
-              <a>Wael Alhamad</a>
-            </p>
-          </div>
-        </div>
-      </footer>
+    <footer></footer>
+
+    <!-- Whatsapp Icon -->
+    <a href="https://wa.me/0096178941518" target="_blank" class="whatsapp">
+      <ion-icon name="logo-whatsapp" class="whatsapp-icon"></ion-icon>
+    </a>
+
+    <!-- Custom Js -->
+    <script src="JS/main.js"></script>
+
     <!-- Icons Library -->
     <script
       type="module"
