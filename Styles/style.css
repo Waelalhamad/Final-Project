@@ -13,7 +13,7 @@
   /* Colors */
   --primary-color: #e63946;
   --secondary-color: #f1faee;
-  --text-color: #1d3557;
+  --text-color: #000000;
   --background-color: #a8dadc;
 
   /* Fonts Size */
@@ -51,6 +51,23 @@
 body {
   height: 100vh;
 }
+
+section {
+  height: 100vh;
+  padding: 80px;
+  border: 2px solid red;
+}
+
+.heading {
+  font-size: var(--h1-size);
+  font-weight: var(--weight-bold);
+  text-align: center;
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background-color: transparent; }
+::-webkit-scrollbar-thumb { background-color: var(--primary-color); }
+
 /* -------------- CUSTOM ALERT STYLE -------------- */
 
 .custom-alert {
@@ -78,19 +95,59 @@ body {
 }
 
 /* --------------  Top Nav STYLE -------------- */
-
-/* --------------  Navigation Bar STYLE -------------- */
-.main-header {
+.top-bar {
+  display: block;
+  position: fixed;
+  left: 0;
+  width: 100%;
+  padding: 10px 20px;
+  border-block-end: 1px solid rgba(0, 0, 0, 0.2);
+  background: var(--primary-color);
+}
+.top-bar .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.top-bar .container .topbar-item {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.top-bar .icon {
+  margin-right: 5px;
+  vertical-align: middle;
+  color: var(--text-color);
+}
+
+.top-bar .span {
+  color: var(--text-color);
+  font-size: var(--base-size);
+  vertical-align: middle;
+}
+
+
+
+
+
+/* --------------  Navigation Bar STYLE -------------- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 5%;
+  left: 0;
+  width: 100%;
   padding: 1rem 80px;
-  background-color: var(--primary-color);
+  background-color: #fFF;
   box-shadow: var(--box-shadow);
 }
 
 .logo-img {
-  width: 100px;
+  width: 120px;
   height: auto;
 }
 
@@ -99,9 +156,7 @@ body {
   justify-content: space-between;
 }
 
-.nav-links li {
-  margin: 0 20px;
-}
+.nav-links li { margin: 0 20px;}
 
 .nav-links li a {
   color: var(--text-color);
@@ -132,6 +187,13 @@ body {
   vertical-align: middle;
 }
 
+/* --------------  Home Section STYLE -------------- */
+.home {
+  background-image: url(/images//Pictures/gadel4.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 /* --------------  WhatsApp Icon STYLE -------------- */
 
 .whatsapp {
@@ -151,12 +213,5 @@ body {
   cursor: pointer;
 }
 
-.whatsapp:hover {
-  transform: scale(1.1);
-  background-color: #000;
-  color: #fff;
-}
-
-.whatsapp-icon {
-  color: #fff;
-}
+.whatsapp:hover { opacity: 0.8 }
+.whatsapp-icon { color: #fff }
