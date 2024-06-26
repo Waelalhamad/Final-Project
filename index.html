@@ -16,7 +16,7 @@
     <!-- Website Title -->
     <title>Pollos Asados Gadel</title>
     <!-- Favicon Link -->
-    <link rel="shortcut icon" href="/res/favicon.svg" type="image/x-icon" />
+    <link rel="shortcut icon" href="/images/logo.svg" type="image/x-icon" />
     <!-- Custom Css Link -->
     <link rel="stylesheet" href="/Styles/style.css" />
   </head>
@@ -29,9 +29,7 @@
     <!-- Top Navbar -->
 
     <div class="top-bar">
-
       <div class="container">
-
         <a href="#" class="topbar-item">
           <div class="icon">
             <ion-icon name="location-outline"></ion-icon>
@@ -45,47 +43,98 @@
           <div class="icon">
             <ion-icon name="time-outline"></ion-icon>
           </div>
-          <span class="span">Daily : 8:00 am to 7:00 pm</span>
+          <span class="span">Saturdays & Sundays => 10:00 am to 9:00 pm</span>
         </div>
-
-        <a href="tel:+11234567890" class="topbar-item link">
-          <div class="icon">
-            <ion-icon name="call-outline"></ion-icon>
-          </div>
-          <span class="span">+1 123 456 7890</span>
-        </a>
-
       </div>
     </div>
 
     <!-- Header -->
     <header>
-      <a href="#" class="logo">
-        <img src="images/logo.svg" alt="Logo" class="logo-img" />
-      </a>
-      <nav class="main-nav">
-        <ul class="nav-links">
-          <li><a href="#home" class="nav-link">Home</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#menu" class="nav-link">Menu</a></li>
-          <li><a href="#reviews" class="nav-link">Reviews</a></li>
-          <li><a href="#location" class="nav-link">Location</a></li>
-          <li><a href="#booking" class="nav-link">Contact</a></li>
-        </ul>
-      </nav>
-      <div class="nav-icons">
-        <a href="#" class="favorite">
-          <ion-icon name="heart-outline" class="favorite-icon"></ion-icon>
+      <div class="container">
+        <a href="#" class="logo">
+          <img src="images/logo.svg" alt="Logo" class="logo-img" />
+          <h2>GADEL</h2>
         </a>
-        <a href="#" class="cart">
-          <ion-icon name="cart-outline" class="cart-icon"></ion-icon>
-        </a>
+        <nav class="main-nav">
+          <ul class="nav-links">
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#menu" class="nav-link">Menu</a></li>
+            <li><a href="#reviews" class="nav-link">Reviews</a></li>
+            <li><a href="#location" class="nav-link">Location</a></li>
+            <li><a href="#booking" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="nav-icons">
+          <a href="#" class="favorite">
+            <ion-icon name="heart-outline" class="favorite-icon"></ion-icon>
+          </a>
+          <a href="#" class="cart">
+            <ion-icon name="cart-outline" class="cart-icon"></ion-icon>
+          </a>
+        </div>
       </div>
     </header>
 
     <!-- Home Section -->
-    <section id="home" class="home section">
-      <div></div>
+    <section class="home" id="home">
+      <div class="slide-list">
+        <div class="slide-item active-slide">
+          <img src="images/Gadel1.webp" alt="" />
+          <div class="slide-content">
+            <h1 class="slider-reveal">Lorem ipsum dolor sit amet.</h1>
+            <p class="slider-reveal">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
+              tempore quas officiis ad placeat facere, voluptatibus
+              exercitationem eaque vitae dicta consequatur deserunt quasi
+              voluptatem rem nihil ipsum similique enim illo, expedita
+              repellendus minus in aut! Reiciendis atque tempora laboriosam
+              consequuntur.
+            </p>
+            <button class="slider-reveal">Lorem, dolor.</button>
+          </div>
+        </div>
+
+        <div class="slide-item">
+          <img src="images/Gadel2.webp" alt="" />
+          <div class="slide-content">
+            <h1 class="slider-reveal">Lorem ipsum dolor sit amet.</h1>
+            <p class="slider-reveal">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
+              tempore quas officiis ad placeat facere, voluptatibus
+              exercitationem eaque vitae dicta consequatur deserunt quasi
+              voluptatem rem nihil ipsum similique enim illo, expedita
+              repellendus minus in aut! Reiciendis atque tempora laboriosam
+              consequuntur.
+            </p>
+            <button class="slider-reveal">Lorem, dolor.</button>
+          </div>
+        </div>
+
+        <div class="slide-item">
+          <img src="images/Gadel3.webp" alt="" />
+          <div class="slide-content">
+            <h1 class="slider-reveal">Lorem ipsum dolor sit amet.</h1>
+            <p class="slider-reveal">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
+              tempore quas officiis ad placeat facere, voluptatibus
+              exercitationem eaque vitae dicta consequatur deserunt quasi
+              voluptatem rem nihil ipsum similique enim illo, expedita
+              repellendus minus in aut! Reiciendis atque tempora laboriosam
+              consequuntur.
+            </p>
+            <button class="slider-reveal">Lorem, dolor.</button>
+          </div>
+        </div>
+      </div>
+
+      <button class="slider-btn prev" onclick="prevSlide();">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </button>
+
+      <button class="slider-btn next" onclick="nextSlide();">
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+      </button>
     </section>
 
     <!-- About Section -->

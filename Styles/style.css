@@ -54,8 +54,6 @@ body {
 
 section {
   height: 100vh;
-  padding: 80px;
-  border: 2px solid red;
 }
 
 .heading {
@@ -64,9 +62,15 @@ section {
   text-align: center;
 }
 
-::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background-color: transparent; }
-::-webkit-scrollbar-thumb { background-color: var(--primary-color); }
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color);
+}
 
 /* -------------- CUSTOM ALERT STYLE -------------- */
 
@@ -98,11 +102,14 @@ section {
 .top-bar {
   display: block;
   position: fixed;
+  top: 0;
   left: 0;
   width: 100%;
+  height: 50px;
   padding: 10px 20px;
-  border-block-end: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   background: var(--primary-color);
+  z-index: 1000;
 }
 .top-bar .container {
   display: flex;
@@ -110,58 +117,95 @@ section {
   align-items: center;
 }
 
-.top-bar .container .topbar-item {
+.top-bar .topbar-item {
   display: flex;
-  justify-content: space-around;
   align-items: center;
 }
 
+.top-bar .topbar-item {
+  margin-right: 30px;
+}
+
 .top-bar .icon {
-  margin-right: 5px;
-  vertical-align: middle;
-  color: var(--text-color);
+  margin-right: 10px;
+  color: #fff;
+  font-size: 1.2em;
 }
 
 .top-bar .span {
-  color: var(--text-color);
-  font-size: var(--base-size);
-  vertical-align: middle;
+  color: #fff;
+  font-size: 1em;
 }
 
-
-
-
+.top-bar .link {
+  text-decoration: none;
+  color: #fff;
+}
 
 /* --------------  Navigation Bar STYLE -------------- */
 header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   position: fixed;
-  top: 5%;
+  top: 50px;
   left: 0;
   width: 100%;
-  padding: 1rem 80px;
-  background-color: #fFF;
+  padding: 1rem 20px;
+  background-color: #fff;
   box-shadow: var(--box-shadow);
+  height: 100px;
+  z-index: 1000;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .logo-img {
-  width: 120px;
-  height: auto;
+  width: 70px;
+  height: 70px;
+}
+
+.logo h2 {
+  font-size: var(--h2-size);
+  font-weight: 700;
+  color: var(--primary-color);
+  letter-spacing: 2px;
+}
+
+.main-nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
 .nav-links {
   display: flex;
   justify-content: space-between;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.nav-links li { margin: 0 20px;}
+.nav-links li {
+  margin: 0 15px;
+}
 
 .nav-links li a {
   color: var(--text-color);
   font-size: var(--base-size);
   font-weight: var(--font-medium);
+  text-decoration: none;
   transition: color var(--transition-1);
 }
 
@@ -169,16 +213,19 @@ header {
   color: var(--primary-color);
 }
 
-.favorite,
-.cart {
+.nav-icons {
+  display: flex;
+  align-items: center;
+}
+
+.nav-icons a {
   color: var(--text-color);
   font-size: var(--h3-size);
-  margin-left: var(--spacing-medium);
+  margin-left: 20px;
   transition: color var(--transition-1);
 }
 
-.favorite:hover,
-.cart:hover {
+.nav-icons a:hover {
   color: var(--primary-color);
 }
 
@@ -187,12 +234,124 @@ header {
   vertical-align: middle;
 }
 
-/* --------------  Home Section STYLE -------------- */
+/* -------------- Hero Section STYLE -------------- */
 .home {
-  background-image: url(/images//Pictures/gadel4.png);
-  background-repeat: no-repeat;
-  background-size: cover;
+  position: relative;
+  margin-top: 6%;
 }
+
+.home .slide-list .slide-item {
+  position: absolute;
+  inset: 0 0 0 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: var(--transition-2);
+}
+
+.home .slide-list .slide-item img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transform: scale(1.15);
+}
+
+.home .slide-list .slide-item img {
+  animation: smoothScale 7s linear forwards;
+}
+
+@keyframes smoothScale {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.15);
+  }
+}
+
+.home .slide-list .slide-item::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.6) 100%,
+    transparent
+  );
+}
+
+.home .slide-content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 1;
+}
+
+.home .slide-list .active-slide {
+  opacity: 1;
+  z-index: 10;
+}
+
+@keyframes showContent {
+  to {
+    transform: translateY(0);
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+.slide-list .active-slide h1,
+.slide-list .active-slide p,
+.slide-list .active-slide button {
+  transform: translateY(30px);
+  filter: blur(20px);
+  opacity: 0;
+  animation: showContent 0.5s 0.7s ease-in-out 1 forwards;
+}
+
+.slide-list .active-slide p {
+  animation-delay: 0.9s;
+}
+.slide-list .active-slide button {
+  animation-delay: 1.2s;
+}
+
+.home .slider-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 100;
+  color: var(--primary-color);
+  font-size: 2rem;
+  border: 1px solid var(--primary-color);
+  border-radius: var(--radius-12);
+  background-color: transparent;
+  width: 45px;
+  height: 45px;
+  top: 50%;
+  transition: var(--transition-1);
+  cursor: pointer;
+}
+
+.home .slider-btn:hover {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
+
+.home .prev {
+  left: 30px;
+}
+
+.home .next {
+  right: 30px;
+}
+
+/* --------------  Locate Section STYLE -------------- */
 
 /* --------------  WhatsApp Icon STYLE -------------- */
 
@@ -201,8 +360,8 @@ header {
   align-items: center;
   justify-content: center;
   position: fixed;
-  bottom: 5%;
-  right: 3%;
+  bottom: 3%;
+  right: 2%;
   width: 64px;
   height: 64px;
   text-align: center;
@@ -211,7 +370,12 @@ header {
   border-radius: var(--radius-circle);
   transition: var(--transition-1);
   cursor: pointer;
+  z-index: 1000;
 }
 
-.whatsapp:hover { opacity: 0.8 }
-.whatsapp-icon { color: #fff }
+.whatsapp:hover {
+  opacity: 0.8;
+}
+.whatsapp-icon {
+  color: #fff;
+}
