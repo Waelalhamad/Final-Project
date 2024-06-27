@@ -7,6 +7,7 @@
   font-family: "Poppins", sans-serif;
   text-decoration: none;
   list-style: none;
+  border: none;
 }
 
 :root {
@@ -14,7 +15,10 @@
   --primary-color: #e63946;
   --secondary-color: #f1faee;
   --text-color: #000000;
-  --background-color: #a8dadc;
+  --text-color-white: #fff;
+  --background-color: rgb(14, 13, 11);
+  --second-background-color: rgb(22,23,24);
+  --black: #212121;
 
   /* Fonts Size */
   --base-size: 16px;
@@ -40,6 +44,8 @@
   /* Border Radius */
   --radius-24: 24px;
   --radius-12: 12px;
+  --radius-8: 8px;
+  --radius-4: 4px;
   --radius-circle: 50%;
 
   /* Transitions */
@@ -50,16 +56,48 @@
 
 body {
   height: 100vh;
+  background-color: var(--background-color);
+  color: var(--text-color-white);
+
 }
 
 section {
+  padding: 80px;
   height: 100vh;
+}
+
+section span {
+  color: var(--primary-color);
 }
 
 .heading {
   font-size: var(--h1-size);
-  font-weight: var(--weight-bold);
+  font-weight: 700;
   text-align: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  letter-spacing: 3px;
+}
+
+.btn {
+  outline: none;
+  padding: 10px 40px;
+  border-radius: var(--radius-8);
+  background: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-weight: var(--font-bold);
+  letter-spacing: 1px;
+  cursor: pointer;
+  overflow: hidden;
+  max-width: max-content;
+  transition: var(--transition-2);
+}
+.btn:hover {
+  background-color: var(--primary-color);
+  color: var(--text-color);
 }
 
 ::-webkit-scrollbar {
@@ -71,6 +109,7 @@ section {
 ::-webkit-scrollbar-thumb {
   background-color: var(--primary-color);
 }
+
 
 /* -------------- CUSTOM ALERT STYLE -------------- */
 
@@ -95,7 +134,7 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 100;
+  z-index: 10000;
 }
 
 /* --------------  Top Nav STYLE -------------- */
@@ -107,10 +146,11 @@ section {
   width: 100%;
   height: 50px;
   padding: 10px 20px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  background: var(--primary-color);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   z-index: 1000;
+  transition: top 0.3s ease;
 }
+
 .top-bar .container {
   display: flex;
   justify-content: space-between;
@@ -152,10 +192,13 @@ header {
   left: 0;
   width: 100%;
   padding: 1rem 20px;
-  background-color: #fff;
-  box-shadow: var(--box-shadow);
+  background-color: transparent;
   height: 100px;
   z-index: 1000;
+  transition: top 0.3s ease, background-color 0.3s ease;
+}
+header.with-bg {
+  background-color: var(--black); /* Change to your desired color */
 }
 
 header .container {
@@ -202,15 +245,35 @@ header .container {
 }
 
 .nav-links li a {
-  color: var(--text-color);
+  color: var(--text-color-white);
   font-size: var(--base-size);
   font-weight: var(--font-medium);
   text-decoration: none;
+  position: relative;
+  padding-bottom: 5px;
   transition: color var(--transition-1);
 }
 
-.nav-links li a:hover {
-  color: var(--primary-color);
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-color);
+  transition: var(--transition-2);
+}
+
+.nav-links li a.active-nav::after,
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+.nav-links li a:hover,
+.nav-icons a:hover,
+.active-nav {
+  color: var(--primary-color) !important;
 }
 
 .nav-icons {
@@ -219,25 +282,39 @@ header .container {
 }
 
 .nav-icons a {
-  color: var(--text-color);
+  color: var(--text-color-white);
   font-size: var(--h3-size);
   margin-left: 20px;
   transition: color var(--transition-1);
 }
 
-.nav-icons a:hover {
-  color: var(--primary-color);
-}
-
 .favorite ion-icon,
 .cart ion-icon {
+  font-size: xx-large;
   vertical-align: middle;
 }
 
-/* -------------- Hero Section STYLE -------------- */
+.cart {
+  width: 48px;
+  position: relative;
+}
+
+.nav-icons .cart-count {
+  top: 0;
+  right: 2px;
+  text-align: center;
+  position: absolute;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  width: 20px;
+  height: 20px;
+  font-size: small;
+  border-radius: var(--radius-circle);
+}
+
+/* -------------- Home Section STYLE -------------- */
 .home {
   position: relative;
-  margin-top: 6%;
 }
 
 .home .slide-list .slide-item {
@@ -277,7 +354,7 @@ header .container {
   bottom: 0;
   background-image: linear-gradient(
     to top,
-    rgba(0, 0, 0, 0.6) 100%,
+    rgba(0, 0, 0, 0.8) 100%,
     transparent
   );
 }
@@ -285,10 +362,27 @@ header .container {
 .home .slide-content {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 60%;
+  color: #fff;
   transform: translate(-50%, -50%);
   text-align: center;
   z-index: 1;
+}
+
+.home .slide-content h1 {
+  letter-spacing: 2px;
+  font-size: var(--h2-size);
+  margin-bottom: 20px;
+}
+
+.home .slide-content p {
+  font-size: 18px;
+  margin-bottom: 50px;
+}
+.home .slide-content h3 {
+  margin-bottom: 40px;
+  font-size: 1.4rem;
+  letter-spacing: 3px;
 }
 
 .home .slide-list .active-slide {
@@ -306,18 +400,21 @@ header .container {
 
 .slide-list .active-slide h1,
 .slide-list .active-slide p,
-.slide-list .active-slide button {
+.slide-list .active-slide a,
+.slide-list .active-slide h3 {
   transform: translateY(30px);
   filter: blur(20px);
   opacity: 0;
   animation: showContent 0.5s 0.7s ease-in-out 1 forwards;
 }
-
-.slide-list .active-slide p {
+.slide-list .active-slide h1 {
   animation-delay: 0.9s;
 }
-.slide-list .active-slide button {
+.slide-list .active-slide p {
   animation-delay: 1.2s;
+}
+.slide-list .active-slide a {
+  animation-delay: 1.5s;
 }
 
 .home .slider-btn {
@@ -351,6 +448,57 @@ header .container {
   right: 30px;
 }
 
+/* --------------  About Section STYLE -------------- */
+
+.about {
+  background-color: var(--second-background-color);
+  overflow: hidden;
+}
+
+.about h2 {
+  font-size: var(--h2-size);
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.about p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.about .container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap-reverse;
+}
+
+.about-content {
+  width: 100%;
+  max-width: 500px;
+}
+
+.about-img {
+  width: 50%;
+  height: 60vh;
+  max-width: 500px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.about img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s ease;
+}
+
+.about-img:hover img {
+  transform: scale(1.1);
+}
+
 /* --------------  Locate Section STYLE -------------- */
 
 /* --------------  WhatsApp Icon STYLE -------------- */
@@ -368,14 +516,38 @@ header .container {
   font-size: var(--h1-size);
   background-color: #59ce72;
   border-radius: var(--radius-circle);
-  transition: var(--transition-1);
+  transition: var(--transition-2);
   cursor: pointer;
   z-index: 1000;
+  opacity: 0;
 }
 
-.whatsapp:hover {
-  opacity: 0.8;
+.whatsapp:hover,
+.lang a:hover {
+  filter: brightness(1.2);
 }
 .whatsapp-icon {
   color: #fff;
+}
+
+.lang {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 3%;
+  left: 2%;
+  width: 80px;
+  height: 50px;
+  font-size: var(--h1-size);
+  gap: 5px;
+  z-index: 1000;
+  transition: var(--transition-2);
+  cursor: pointer;
+  opacity: 0;
+}
+
+.lang a {
+  border-radius: var(--radius-8);
+  transition: var(--transition-1);
 }

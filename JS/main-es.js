@@ -84,14 +84,6 @@ function showAlert(message, bg) {
   }, 2000);
 }
 
-// Lang Buttons
-const english = document.getElementById("english");
-
-english.addEventListener('click', function() {
-  showAlert('You are on the English page!', 'black');
-});
-
-
 /*******************************************************************************************************
  *                                                                                                      *
  *                                           Slider                                                     *
