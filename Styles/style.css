@@ -84,7 +84,7 @@ section span {
   padding: 10px 40px;
   border-radius: var(--radius-8);
   background: transparent;
-  border: 2px solid var(--primary-color);
+  border: 2px solid var(--primary-color) !important;
   color: var(--primary-color);
   font-size: 1.1rem;
   text-transform: uppercase;
@@ -169,12 +169,12 @@ section span {
 .top-bar .icon {
   margin-right: 10px;
   color: #fff;
-  font-size: 1.2em;
+  font-size: 1.2rem;
 }
 
 .top-bar .span {
   color: #fff;
-  font-size: 1em;
+  font-size: 1rem;
 }
 
 .top-bar .link {
@@ -288,13 +288,13 @@ header .container {
   transition: color var(--transition-1);
 }
 
-.favorite ion-icon,
-.cart ion-icon {
+.favorite-icon ion-icon,
+.cart-icon ion-icon {
   font-size: xx-large;
   vertical-align: middle;
 }
 
-.cart {
+.cart-icon {
   width: 48px;
   position: relative;
 }
@@ -310,6 +310,17 @@ header .container {
   height: 20px;
   font-size: small;
   border-radius: var(--radius-circle);
+}
+
+/* Slide Cart */
+.cart {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 350px;
+  background-color: var(--black);
+  z-index: 10000;
 }
 
 /* -------------- Home Section STYLE -------------- */
@@ -498,6 +509,47 @@ header .container {
 .about-img:hover img {
   transform: scale(1.1);
 }
+
+/* --------------  Menu Section STYLE -------------- */
+
+.menu {
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* --------------  Locate Section STYLE -------------- */
 
