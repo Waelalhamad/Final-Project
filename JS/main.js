@@ -18,14 +18,12 @@ function onScroll() {
   // Show/hide top bar and adjust header position
   if (scrollTop > 0) {
     topBar.style.top = "-50px";
-    header.style.top = "0";
     header.classList.add("with-bg");
     whatsapp.style.opacity = "1";
     lang.style.opacity = "1";
   } else {
     if (scrollTop === 0) {
       topBar.style.top = "0";
-      header.style.top = "50px";
       header.classList.remove("with-bg");
       whatsapp.style.opacity = "0";
       lang.style.opacity = "0";
@@ -162,14 +160,16 @@ const totalPriceElement = document.querySelector('.cart-bottom .total span');
 const cartIcon = document.querySelector('.cart-icon');
 const cart = document.querySelector('.cart');
 const closeBtn = document.querySelector('.close-btn');
-const addToCartButtons = document.querySelectorAll('#add-to-cart');
+const addToCartButtons = document.querySelectorAll('.add-to-cart');
 
 // Open and close cart event listeners
 cartIcon.addEventListener('click', () => {
+  cart.style.boxShadow  = "-4px 0 10px rgba(255, 255, 255, 0.2)";
   cart.classList.add('open');
 });
 
 closeBtn.addEventListener('click', () => {
+  cart.style.boxShadow  = "none";
   cart.classList.remove('open');
 });
 
@@ -281,4 +281,27 @@ cart.addEventListener('click', (event) => {
 // Stop propagation for cart icon clicks
 cartIcon.addEventListener('click', (event) => {
   event.stopPropagation();
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const menuItems = document.querySelectorAll(".menu-item");
+
+  filterButtons.forEach(button => {
+      button.addEventListener("click", function() {
+          filterButtons.forEach(btn => btn.classList.remove("active"));
+          this.classList.add("active");
+
+          const filter = this.getAttribute("data-filter");
+
+          menuItems.forEach(item => {
+              if (filter === "all" || item.classList.contains(filter)) {
+                  item.classList.add("all");
+              } else {
+                  item.classList.remove("all");
+              }
+          });
+      });
+  });
 });
