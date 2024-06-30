@@ -151,6 +151,8 @@ function showSLider() {
 let cartItems = [];
 let cartCount = 0;
 let totalPrice = 0;
+const phoneNumber = '00528196907343';
+
 
 // DOM Elements
 const cartBody = document.querySelector('.cart-body');
@@ -161,15 +163,17 @@ const cartIcon = document.querySelector('.cart-icon');
 const cart = document.querySelector('.cart');
 const closeBtn = document.querySelector('.close-btn');
 const addToCartButtons = document.querySelectorAll('.add-to-cart');
+const checkoutButton = document.getElementById('checkout');
+
 
 // Open and close cart event listeners
 cartIcon.addEventListener('click', () => {
-  cart.style.boxShadow  = "-4px 0 10px rgba(255, 255, 255, 0.2)";
+  cart.style.boxShadow = "-4px 0 10px rgba(255, 255, 255, 0.2)";
   cart.classList.add('open');
 });
 
 closeBtn.addEventListener('click', () => {
-  cart.style.boxShadow  = "none";
+  cart.style.boxShadow = "none";
   cart.classList.remove('open');
 });
 
@@ -177,7 +181,8 @@ closeBtn.addEventListener('click', () => {
 function addToCart(event) {
   const menuItem = event.target.closest('.menu-item');
   const title = menuItem.querySelector('h2').textContent;
-  const price = parseFloat(menuItem.querySelector('p:nth-of-type(2)').textContent.replace('Price: $', ''));
+  const priceText = menuItem.querySelector(".price").innerText;
+  const price = parseFloat(priceText.replace("Price: $", ""));
   const imgSrc = menuItem.querySelector('img').src;
 
   // Check if item already in cart
@@ -240,7 +245,7 @@ function updateCart() {
   }
 
   // Update total price in cart
-  totalPriceElement.textContent = `$${totalPrice.toFixed(2)}`;
+  totalPriceElement.textContent = `$${totalPrice}`;
 }
 
 // Function to remove item from cart
@@ -283,25 +288,63 @@ cartIcon.addEventListener('click', (event) => {
   event.stopPropagation();
 });
 
+function formatCart(cartItems, totalPrice) {
+  let message = 'Cart Details:\n';
 
-document.addEventListener("DOMContentLoaded", function() {
-  const filterButtons = document.querySelectorAll(".filter-btn");
-  const menuItems = document.querySelectorAll(".menu-item");
+  cartItems.forEach(item => {
+      message += `${item.title} (x${item.count}): $${(item.price * item.count).toFixed(2)}\n`;
+  });
 
-  filterButtons.forEach(button => {
-      button.addEventListener("click", function() {
-          filterButtons.forEach(btn => btn.classList.remove("active"));
-          this.classList.add("active");
+  message += `Subtotal: $${totalPrice.toFixed(2)}`;
 
-          const filter = this.getAttribute("data-filter");
+  return message;
+}
 
-          menuItems.forEach(item => {
-              if (filter === "all" || item.classList.contains(filter)) {
-                  item.classList.add("all");
-              } else {
-                  item.classList.remove("all");
-              }
-          });
-      });
+function getWhatsAppURL(cartItems, totalPrice, phoneNumber) {
+  const message = formatCart(cartItems, totalPrice);
+  const encodedMessage = encodeURIComponent(message);
+  return `https://wa.me/${phoneNumber}/?text=${encodedMessage}`;
+}
+
+function getWhatsAppURL(cartItems, totalPrice, phoneNumber) {
+  const message = formatCart(cartItems, totalPrice);
+  const encodedMessage = encodeURIComponent(message);
+  return `https://wa.me/${phoneNumber}/?text=${encodedMessage}`;
+}
+
+
+checkoutButton.addEventListener('click', () => {
+  const whatsappURL = getWhatsAppURL(cartItems, totalPrice, phoneNumber);
+  window.open(whatsappURL, '_blank');
+});
+
+
+
+
+
+
+/*******************************************************************************************************
+ *                                                                                                      *
+ *                                           Menu Filter                                                *
+ *                                                                                                      *
+ *******************************************************************************************************/
+
+const filterButtons = document.querySelectorAll(".filter-btn");
+const menuItems = document.querySelectorAll(".menu-item");
+
+filterButtons.forEach(button => {
+  button.addEventListener("click", function () {
+    filterButtons.forEach(btn => btn.classList.remove("active"));
+    this.classList.add("active");
+
+    const filter = this.getAttribute("data-filter");
+
+    menuItems.forEach(item => {
+      if (filter === "all" || item.classList.contains(filter)) {
+        item.classList.add("all");
+      } else {
+        item.classList.remove("all");
+      }
+    });
   });
 });

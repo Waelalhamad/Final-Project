@@ -1,489 +1,494 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Description Tag ( Improve SEO ) -->
-    <meta
-      name="description"
-      content="At Pollos Asados Gadel, we pride ourselves on offering the best grilled chicken in Apodaca, Nuevo León. Our chicken is prepared with the freshest ingredients and grilled to perfection, ensuring a juicy and delicious taste. We offer options such as whole grilled chicken, half grilled chicken, and complete packages with tortillas, potatoes, grilled onions, grilled chili, and more. With fast and reliable home delivery service, you'll enjoy an unmatched culinary experience in the comfort of your home. Place your order today and discover why we are the best!"
-    />
 
-    <!-- KeyWods Tag ( Improve SEO ) -->
-    <meta
-      name="keywords"
-      content="Grilled chicken, Gadel, whole grilled chicken, half grilled chicken, grilled chicken packages, grilled food, tortillas, potatoes, grilled onions, grilled chili, sauce and lime, grilled sausages, tortilla chips with guacamole, Apodaca, Nuevo León, home delivery service, best grilled chicken, delicious food, takeout, homemade food, barbecue, chicken specialties, grill in Apodaca, juicy chicken, fast food, barbecue menu, chicken deal, chicken restaurant, family meals"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Description Tag ( Improve SEO ) -->
+  <meta name="description"
+    content="At Pollos Asados Gadel, we pride ourselves on offering the best grilled chicken in Apodaca, Nuevo León. Our chicken is prepared with the freshest ingredients and grilled to perfection, ensuring a juicy and delicious taste. We offer options such as whole grilled chicken, half grilled chicken, and complete packages with tortillas, potatoes, grilled onions, grilled chili, and more. With fast and reliable home delivery service, you'll enjoy an unmatched culinary experience in the comfort of your home. Place your order today and discover why we are the best!" />
 
-    <!-- Website Title -->
-    <title>GADEL Roosted Chicken</title>
+  <!-- KeyWods Tag ( Improve SEO ) -->
+  <meta name="keywords"
+    content="Grilled chicken, Gadel, whole grilled chicken, half grilled chicken, grilled chicken packages, grilled food, tortillas, potatoes, grilled onions, grilled chili, sauce and lime, grilled sausages, tortilla chips with guacamole, Apodaca, Nuevo León, home delivery service, best grilled chicken, delicious food, takeout, homemade food, barbecue, chicken specialties, grill in Apodaca, juicy chicken, fast food, barbecue menu, chicken deal, chicken restaurant, family meals" />
 
-    <!-- Favicon Link -->
-    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+  <!-- Website Title -->
+  <title>GADEL Roosted Chicken</title>
 
-    <!-- Flags Icon -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css"
-    />
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-    <!-- Custom Css Link -->
-    <link rel="stylesheet" href="/Styles/style.css" />
-  </head>
+  <!-- Favicon Link -->
+  <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
 
-  <body>
-    <!-- Custom Alert Card -->
-    <div id="custom-alert" class="custom-alert">
-      <span id="alert-message"></span>
-    </div>
+  <!-- Flags Icon -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css" />
 
-    <!-- Top Navbar -->
+  <!-- Custom Css Link -->
+  <link rel="stylesheet" href="/Styles/style.css" />
+</head>
 
-    <div class="top-bar">
-      <div class="container">
-        <a href="#" class="topbar-item">
-          <div class="icon">
-            <ion-icon name="location-outline"></ion-icon>
-          </div>
-          <span class="span">
-            Río S. Salvador 1053, Pueblo Nuevo IV, 66646 Cdad. Apodaca, N.L.
-          </span>
-        </a>
+<body>
+  <!-- Custom Alert Card -->
+  <div id="custom-alert" class="custom-alert">
+    <span id="alert-message"></span>
+  </div>
 
-        <div class="topbar-item">
-          <div class="icon">
-            <ion-icon name="time-outline"></ion-icon>
-          </div>
-          <span class="span">Saturdays & Sundays => 10:00 am to 9:00 pm</span>
+  <!-- Top Navbar -->
+
+  <div class="top-bar">
+    <div class="container">
+      <a href="#" class="topbar-item">
+        <div class="icon">
+          <ion-icon name="location-outline"></ion-icon>
         </div>
+        <span class="span">
+          Río S. Salvador 1053, Pueblo Nuevo IV, 66646 Cdad. Apodaca, N.L.
+        </span>
+      </a>
+
+      <div class="topbar-item">
+        <div class="icon">
+          <ion-icon name="time-outline"></ion-icon>
+        </div>
+        <span class="span">Saturdays & Sundays => 10:00 am to 9:00 pm</span>
       </div>
     </div>
+  </div>
 
-    <!-- Header -->
-    <header>
-      <div class="container">
-        <a href="#" class="logo">
-          <img src="images/logo.svg" alt="Logo" class="logo-img" />
-          <h2>GADEL</h2>
-        </a>
-        <nav class="main-nav">
-          <ul class="nav-links">
-            <li><a href="#home" class="nav-link active-nav">Home</a></li>
-            <li><a href="#about" class="nav-link">About</a></li>
-            <li><a href="#menu" class="nav-link">Menu</a></li>
-            <li><a href="#reviews" class="nav-link">Reviews</a></li>
-            <li><a href="#location" class="nav-link">Location</a></li>
-            <li><a href="#contact" class="nav-link">Contact</a></li>
-          </ul>
-        </nav>
-        <div class="nav-icons">
-          <a href="pages/en/wishlist.html" class="favorite-icon">
-            <ion-icon name="heart-outline" class="favorite-icon"></ion-icon>
-            <div class="favourite-count">
-              <span>0</span>
-            </div>
-          </a>
-          <a class="cart-icon">
-            <ion-icon name="cart-outline" class="cart-icon"></ion-icon>
-            <div class="cart-count">
-              <span>0</span>
-            </div>
-          </a>
-        </div>
-      </div>
-    </header>
-
-    <!-- Slide Cart -->
-    <div class="cart">
-      <div class="cart-content">
-        <div class="cart-header">
-          <div class="cart-title">
-            <h2>Your Cart</h2>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <a href="#" class="logo">
+        <img src="images/logo.svg" alt="Logo" class="logo-img" />
+        <h2>GADEL</h2>
+      </a>
+      <nav class="main-nav">
+        <ul class="nav-links">
+          <li><a href="#home" class="nav-link active-nav">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#menu" class="nav-link">Menu</a></li>
+          <li><a href="#reviews" class="nav-link">Reviews</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-icons">
+        <a class="cart-icon">
+          <ion-icon name="cart-outline" class="cart-icon"></ion-icon>
+          <div class="cart-count">
             <span>0</span>
           </div>
-          <a class="close-btn">
-            <ion-icon name="close-outline"></ion-icon>
-          </a>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Slide Cart -->
+  <div class="cart">
+    <div class="cart-content">
+      <div class="cart-header">
+        <div class="cart-title">
+          <h2>Your Cart</h2>
+          <span>0</span>
         </div>
-        <div class="cart-body">
-          <div class="empty">
-            <p class="empty-message">Your cart is currently empty.</p>
-            <a href="#menu" class="btn">View Our Menu</a>
-          </div>
+        <a class="close-btn">
+          <ion-icon name="close-outline"></ion-icon>
+        </a>
+      </div>
+      <div class="cart-body">
+        <div class="empty">
+          <p class="empty-message">Your cart is currently empty.</p>
+          <a href="#menu" class="btn">View Our Menu</a>
         </div>
-        <div class="cart-bottom">
-          <div class="total">
-            <h3>Total:</h3>
-            <span>$0.00</span>
-          </div>
-          <div class="actions">
-            <button id="checkout" class="btn">Checkout</button>
-          </div>
+      </div>
+      <div class="cart-bottom">
+        <div class="total">
+          <h3>Total:</h3>
+          <span>$0.00</span>
+        </div>
+        <div class="actions">
+          <button id="checkout" class="btn">Checkout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Home Section -->
+  <section class="home" id="home">
+    <div class="slide-list">
+      <div class="slide-item active-slide">
+        <img src="images/Pictures/gadel8.png" alt="" style="object-position: top" />
+        <div class="slide-content">
+          <h3><span>Roasted Chicken</span></h3>
+          <h1>Premium Roasted Chicken</h1>
+          <p>
+            Experience our rich, perfectly prepared roasted chicken, crafted
+            with the finest ingredients for exceptional quality. At Gadel,
+            each bite is a taste of culinary excellence.
+          </p>
+          <a href="#" class="btn">View Our Menu</a>
+        </div>
+      </div>
+
+      <div class="slide-item">
+        <img src="images/Pictures/gadel4.png" alt="" />
+        <div class="slide-content">
+          <h3><span>Tasty Creations</span></h3>
+          <h1>Exquisite Culinary Creations</h1>
+          <p>
+            Delight in our expertly crafted meals, showcasing the best
+            ingredients and culinary expertise. At Gadel, satisfaction is
+            guaranteed.
+          </p>
+          <a href="#" class="btn">View Our Menu</a>
+        </div>
+      </div>
+
+      <div class="slide-item">
+        <img src="images/Gadel7.webp" alt="" />
+        <div class="slide-content">
+          <h3><span>Explore Our Menu</span></h3>
+          <h1>Culinary Excellence</h1>
+          <p>
+            Indulge in a diverse array of dishes prepared with dedication to
+            flavor and quality. At Gadel, each bite is an unforgettable
+            experience.
+          </p>
+          <a href="#" class="btn">View Our Menu</a>
+        </div>
+      </div>
+
+      <div class="slide-item">
+        <img src="images/Gadel3.webp" alt="" />
+        <div class="slide-content">
+          <h3><span>Premium Quality</span></h3>
+          <h1>Superior Chicken</h1>
+          <p>
+            Taste our premium chicken known for superior quality and taste. At
+            Gadel, we deliver excellence in every dish.
+          </p>
+          <a href="#" class="btn">View Our Menu</a>
         </div>
       </div>
     </div>
 
-    <!-- Home Section -->
-    <section class="home" id="home">
-      <div class="slide-list">
-        <div class="slide-item active-slide">
-          <img
-            src="images/Pictures/gadel8.png"
-            alt=""
-            style="object-position: top"
-          />
-          <div class="slide-content">
-            <h3><span>Roasted Chicken</span></h3>
-            <h1>Premium Roasted Chicken</h1>
-            <p>
-              Experience our rich, perfectly prepared roasted chicken, crafted
-              with the finest ingredients for exceptional quality. At Gadel,
-              each bite is a taste of culinary excellence.
-            </p>
-            <a href="#" class="btn">View Our Menu</a>
-          </div>
-        </div>
+    <button class="slider-btn prev" onclick="prevSlide();">
+      <ion-icon name="chevron-back-outline"></ion-icon>
+    </button>
 
-        <div class="slide-item">
-          <img src="images/Pictures/gadel4.png" alt="" />
-          <div class="slide-content">
-            <h3><span>Tasty Creations</span></h3>
-            <h1>Exquisite Culinary Creations</h1>
-            <p>
-              Delight in our expertly crafted meals, showcasing the best
-              ingredients and culinary expertise. At Gadel, satisfaction is
-              guaranteed.
-            </p>
-            <a href="#" class="btn">View Our Menu</a>
-          </div>
-        </div>
+    <button class="slider-btn next" onclick="nextSlide();">
+      <ion-icon name="chevron-forward-outline"></ion-icon>
+    </button>
+  </section>
 
-        <div class="slide-item">
-          <img src="images/Gadel7.webp" alt="" />
-          <div class="slide-content">
-            <h3><span>Explore Our Menu</span></h3>
-            <h1>Culinary Excellence</h1>
-            <p>
-              Indulge in a diverse array of dishes prepared with dedication to
-              flavor and quality. At Gadel, each bite is an unforgettable
-              experience.
-            </p>
-            <a href="#" class="btn">View Our Menu</a>
-          </div>
-        </div>
-
-        <div class="slide-item">
-          <img src="images/Gadel3.webp" alt="" />
-          <div class="slide-content">
-            <h3><span>Premium Quality</span></h3>
-            <h1>Superior Chicken</h1>
-            <p>
-              Taste our premium chicken known for superior quality and taste. At
-              Gadel, we deliver excellence in every dish.
-            </p>
-            <a href="#" class="btn">View Our Menu</a>
-          </div>
-        </div>
-      </div>
-
-      <button class="slider-btn prev" onclick="prevSlide();">
-        <ion-icon name="chevron-back-outline"></ion-icon>
-      </button>
-
-      <button class="slider-btn next" onclick="nextSlide();">
-        <ion-icon name="chevron-forward-outline"></ion-icon>
-      </button>
-    </section>
-
-    <!-- About Section -->
-    <section class="about" id="about">
-      <h1 class="heading">Our <span>Story!</span></h1>
-      <div class="container">
-        <div class="about-content">
-          <h2><span>GADEL</span> Roosted Chicken</h2>
-          <p>
-            Gabriel's journey began at a local roasted chicken restaurant.
-            Inspired by loved ones, he turned his backyard into a takeout
-            restaurant in 2019 to support his family and provide a quality
-            education for his children. His dedication quickly resonated with
-            the community, leading to a thriving business and dreams of a
-            full-fledged restaurant.
-          </p>
-          <a href="pages/story.html" class="btn">Read More..</a>
-        </div>
-        <div class="about-img">
-          <img
-            src="images/Pictures/Gadel1.png"
-            alt="Owner Image"
-            loading="lazy"
-          />
-        </div>
-      </div>
-    </section>
-
-    <!-- Menu Section -->
-    <section id="menu" class="menu section">
-      <div class="container">
-        <h1 class="heading">Our <span>Menu!</span></h1>
-
-        <!-- Menu Filter Buttons -->
-        <div class="menu-filter">
-          <button class="filter-btn active" data-filter="all">All</button>
-          <button class="filter-btn" data-filter="chicken-meals">Meals</button>
-          <button class="filter-btn" data-filter="packages">Packages</button>
-          <button class="filter-btn" data-filter="additions">Extra</button>
-        </div>
-
-        <!-- Menu List -->
-        <div class="menu-list">
-          <div class="menu-item chicken-meals all">
-            <div class="menu-img">
-              <img src="menu/chicken.png" alt="Grilled Chicken" />
-            </div>
-            <div class="menu-content">
-              <h2>1 Grilled Chicken</h2>
-              <p>
-                Tortillas, Potatoes, Grilled onions, Roasted chili, Sauce and
-                lime
-              </p>
-              <p class="price">Price: $160</p>
-              <div class="menu-action">
-                <button class="btn add-to-cart">Add To Cart</button>
-                <a class="favorite-btn">
-                  <ion-icon name="heart-outline"></ion-icon>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="menu-item chicken-meals all">
-            <div class="menu-img">
-              <img src="menu/half-chicken.jpg" alt="1/2 Grilled Chicken" />
-            </div>
-            <div class="menu-content">
-              <h2>1/2 Grilled Chicken</h2>
-              <p>
-                Tortillas, Potatoes, Grilled onions, Roasted chili, Sauce and
-                lime
-              </p>
-              <p class="price">Price: $90</p>
-              <div class="menu-action">
-                <button class="btn add-to-cart">Add To Cart</button>
-                <a class="favorite-btn">
-                  <ion-icon name="heart-outline"></ion-icon>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Packages -->
-          <div class="menu-item packages all">
-            <div class="menu-img">
-              <img src="menu/hotdog.webp" alt="Package 1" />
-            </div>
-            <div class="menu-content">
-              <h2>Package 1</h2>
-              <p>
-                1 Grilled chicken, 3 grilled sausages, Tortilla chips with
-                guacamole, Tortillas, Potatoes, Grilled onions, Roasted chili,
-                Sauce and lime
-              </p>
-              <p class="price">Price: $200</p>
-              <div class="menu-action">
-                <button class="btn add-to-cart">Add To Cart</button>
-                <a class="favorite-btn">
-                  <ion-icon name="heart-outline"></ion-icon>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="menu-item packages all">
-            <div class="menu-img">
-              <img src="menu/tortillas.png" alt="Package 2" />
-            </div>
-            <div class="menu-content">
-              <h2>Package 2</h2>
-              <p>
-                2 Grilled chickens, 3 grilled sausages, Tortilla chips with
-                guacamole, Tortillas, Potatoes, Grilled onions, Roasted chili,
-                Sauce and lime
-              </p>
-              <p class="price">Price: $350</p>
-              <div class="menu-action">
-                <button class="btn add-to-cart">Add To Cart</button>
-                <a class="favorite-btn">
-                  <ion-icon name="heart-outline"></ion-icon>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Additions -->
-          <div class="menu-item additions all">
-            <div class="menu-img">
-              <img src="menu/sausages.webp" alt="3 Sausages" />
-            </div>
-            <div class="menu-content">
-              <h2>3 Sausages</h2>
-              <p class="price">Price: $30</p>
-              <div class="menu-action">
-                <button class="btn add-to-cart">Add To Cart</button>
-                <a class="favorite-btn">
-                  <ion-icon name="heart-outline"></ion-icon>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="menu-item additions all">
-            <div class="menu-img">
-              <img
-                src="menu/guacamole.jpg"
-                alt="Tortilla Chips with Guacamole"
-              />
-            </div>
-            <div class="menu-content">
-              <h2>Tortilla Chips with Guacamole</h2>
-              <p class="price">Price: $30</p>
-              <div class="menu-action">
-                <button class="btn add-to-cart">Add To Cart</button>
-                <a class="favorite-btn">
-                  <ion-icon name="heart-outline"></ion-icon>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="menu-item additions all">
-            <div class="menu-img">
-              <img src="menu/guacamole.png" alt="Guacamole" />
-            </div>
-            <div class="menu-content">
-              <h2>Guacamole</h2>
-              <p class="price">Price: $10</p>
-              <div class="menu-action">
-                <button class="btn add-to-cart">Add To Cart</button>
-                <a class="favorite-btn">
-                  <ion-icon name="heart-outline"></ion-icon>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="menu-item additions all">
-            <div class="menu-img">
-              <img src="menu/onion2.jpg" alt="Grilled Onions" />
-            </div>
-            <div class="menu-content">
-              <h2>Grilled Onions</h2>
-              <p class="price">Price: $10</p>
-              <div class="menu-action">
-                <button class="btn add-to-cart">Add To Cart</button>
-                <a class="favorite-btn">
-                  <ion-icon name="heart-outline"></ion-icon>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Reviews Section -->
-    <section id="reviews" class="reviews section">
-      <div></div>
-    </section>
-
-    <!-- Locate Section -->
-    <section id="location" class="location section">
-      <div class="location-container">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3593.2162028554108!2d-100.17262199999999!3d25.763421399999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8662eb91593eb043%3A0x177209b1d7ee5025!2sPollos%20Asados%20Gadel!5e0!3m2!1sen!2slb!4v1719332649054!5m2!1sen!2slb"
-          width="600"
-          height="450"
-          style="border: 0"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact section">
-      <div></div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-      <div class="container">
-        <div class="logo-container">
-          <a href="#" class="logo"><span>Bite</span>Joy.</a>
-        </div>
-        <div class="contact">
-          <h3>Contact Us</h3>
-          <p>
-            <a href="tell:091" class="io"><i class="fa-solid fa-phone"></i></a>
-            Phone: +52 81 9690 7343
-          </p>
-          <p>
-            <a href="google.com/maps" target="_blank" class="io">
-              <i class="fa-solid fa-location-dot"></i>
-            </a>
-            Address: Río S. Salvador 1053, Apodaca, Nuevo Leon, Mexico
-          </p>
-        </div>
-        <div class="quick-links">
-          <h3>Quick Links</h3>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#about">About</a></li>
-            <li><a href="menu.html">Menu</a></li>
-            <li><a href="index.html#locate">Locate</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
-          </ul>
-        </div>
-        <div class="social-media">
-          <h3>Follow Us</h3>
-          <div class="social-media">
-            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
+  <!-- About Section -->
+  <section class="about" id="about">
+    <h1 class="heading">Our <span>Story!</span></h1>
+    <div class="container">
+      <div class="about-content">
+        <h2><span>GADEL</span> Roosted Chicken</h2>
         <p>
-          &copy; 2024 <span>GADEL</span> Made with &#10084;&#65039; By
-          <a href="https://github.com/Waelalhamad/">Wael Alhamad</a>
+          Gabriel's journey began at a local roasted chicken restaurant.
+          Inspired by loved ones, he turned his backyard into a takeout
+          restaurant in 2019 to support his family and provide a quality
+          education for his children. His dedication quickly resonated with
+          the community, leading to a thriving business and dreams of a
+          full-fledged restaurant.
         </p>
+        <a href="#menu" class="btn">View Our Menu</a>
       </div>
-    </footer>
-
-    <!-- Flags Icon -->
-    <div class="lang">
-      <a href="pages/index-es.html" class="fi fi-es fis"></a>
-      <a class="fi fi-us fis" id="english"></a>
+      <div class="about-img">
+        <img src="images/Pictures/Gadel1.png" alt="Owner Image" loading="lazy" />
+      </div>
     </div>
+  </section>
 
-    <!-- Whatsapp Icon -->
-    <a href="https://wa.me/0096178941518" target="_blank" class="whatsapp">
-      <ion-icon name="logo-whatsapp" class="whatsapp-icon"></ion-icon>
-    </a>
+  <!-- Menu Section -->
+  <section id="menu" class="menu section">
+    <div class="container">
+      <h1 class="heading">Our <span>Menu!</span></h1>
 
-    <!-- Custom Js -->
-    <script src="JS/main.js"></script>
+      <!-- Menu Filter Buttons -->
+      <div class="menu-filter">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="chicken-meals">Meals</button>
+        <button class="filter-btn" data-filter="packages">Packages</button>
+        <button class="filter-btn" data-filter="additions">Extra</button>
+      </div>
 
-    <!-- Icons Library -->
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-    ></script>
-  </body>
+      <!-- Menu List -->
+      <div class="menu-list">
+        <div class="menu-item chicken-meals all">
+          <div class="menu-img">
+            <img src="menu/chicken.png" alt="Grilled Chicken" />
+          </div>
+          <div class="menu-content">
+            <h2>1 Grilled Chicken</h2>
+            <p>
+              Tortillas, Potatoes, Grilled onions, Roasted chili, Sauce and
+              lime
+            </p>
+            <div class="menu-action">
+              <button class="btn add-to-cart">Add To Cart</button>
+              <div class="star-rating">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+              </div>
+              <p class="price">$160</p>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-item chicken-meals all">
+          <div class="menu-img">
+            <img src="menu/half-chicken.png" alt="1/2 Grilled Chicken" />
+          </div>
+          <div class="menu-content">
+            <h2>1/2 Grilled Chicken</h2>
+            <p>
+              Tortillas, Potatoes, Grilled onions, Roasted chili, Sauce and
+              lime
+            </p>
+            <div class="menu-action">
+              <button class="btn add-to-cart">Add To Cart</button>
+              <div class="star-rating">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star-outline"></ion-icon>
+              </div>
+              <p class="price">$90</p>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Packages -->
+        <div class="menu-item packages all">
+          <div class="menu-img">
+            <img src="menu/package-2.png" alt="Package 1" />
+          </div>
+          <div class="menu-content">
+            <h2>Package 1</h2>
+            <p>
+              1 Grilled chicken, 3 grilled sausages, Tortilla chips with
+              guacamole, Tortillas, Potatoes, Grilled onions, Roasted chili,
+              Sauce and lime
+            </p>
+            <div class="menu-action">
+              <button class="btn add-to-cart">Add To Cart</button>
+              <div class="star-rating">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star-outline"></ion-icon>
+              </div>
+              <p class="price">$200</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-item packages all">
+          <div class="menu-img">
+            <img src="menu/package-1.png" alt="Package 2" />
+          </div>
+          <div class="menu-content">
+            <h2>Package 2</h2>
+            <p>
+              2 Grilled chickens, 3 grilled sausages, Tortilla chips with
+              guacamole, Tortillas, Potatoes, Grilled onions, Roasted chili,
+              Sauce and lime
+            </p>
+            <div class="menu-action">
+              <button class="btn add-to-cart">Add To Cart</button>
+              <div class="star-rating">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+              </div>
+              <p class="price">$350</p>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Additions -->
+         <div class="menu-item additions all">
+          <div class="menu-img">
+            <img src="menu/Sausages.png" alt="3 Sausages" />
+          </div>
+          <div class="menu-content">
+            <h2>3 Sausages</h2>
+            <p>Indulge in our juicy grilled sausages, bursting with flavor</p>
+            <div class="menu-action">
+              <button class="btn add-to-cart">Add To Cart</button>
+              <div class="star-rating">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star-outline"></ion-icon>
+              </div>
+              <p class="price">$30</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-item additions all">
+          <div class="menu-img">
+            <img src="menu/guacamole-chips.png" alt="Tortilla Chips with Guacamole" />
+          </div>
+          <div class="menu-content">
+            <h2>Tortilla Chips with Guacamole</h2>
+            <p>Savor our crunchy tortilla chips served with creamy guacamole.</p>
+            <div class="menu-action">
+              <button class="btn add-to-cart">Add To Cart</button>
+              <div class="star-rating">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+              </div>
+              <p class="price">$30</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-item additions all">
+          <div class="menu-img">
+            <img src="menu/guacamole (2).png" alt="Guacamole" />
+          </div>
+          <div class="menu-content">
+            <h2>Guacamole</h2>
+            <p>Delight in the richness of our homemade guacamole.</p>
+            <div class="menu-action">
+              <button class="btn add-to-cart">Add To Cart</button>
+              <div class="star-rating">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star-outline"></ion-icon>
+              </div>
+              <p class="price">$10</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="menu-item additions all">
+          <div class="menu-img">
+            <img src="menu/onion.png" alt="Grilled Onions" />
+          </div>
+          <div class="menu-content">
+            <h2>Grilled Onions</h2>
+            <p>Enjoy the savory sweetness of our perfectly grilled onions.</p>
+            <div class="menu-action">
+              <button class="btn add-to-cart">Add To Cart</button>
+              <div class="star-rating">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+              </div>
+              <p class="price">$10</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews Section -->
+  <section id="reviews" class="reviews">
+    <h1 class="heading">Our <span>Reviews!</span></h1>
+    <div class="container">
+      <div class="review-item">
+        <div class="img-container">
+          <img src="/images/person1.png" alt="Person 1">
+        </div>
+      </div>
+      <div class="review-item">
+        <div class="img-container">
+          <img src="/images/person1.png" alt="Person 1">
+        </div>
+      </div>
+      <div class="review-item">
+        <div class="img-container">
+          <img src="/images/person1.png" alt="Person 1">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h1 class="heading">Our <span>Location!</span></h1>
+    <div class="container">
+      <div class="contact-info">
+        <h2>Contact <span>Us!</span></h2>
+        <ul>
+          <li>
+            <ion-icon name="call-outline"></ion-icon>
+            <span>Phone: +52 81 9690 7343</span>
+          </li>
+          <li>
+            <ion-icon name="location-outline"></ion-icon>
+            <span>Address: Río S. Salvador 1053, Pueblo Nuevo IV, 66646 Cdad. Apodaca, N.L.</span>
+          </li>
+        </ul>
+        <a href="https://maps.app.goo.gl/tcio5nrbc9EcZJAj6" class="btn">Google Maps</a>
+      </div>
+      <div class="location">
+        <iframe style="filter: invert(90%)"
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7186.432429924813!2d-100.172622!3d25.763421!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8662eb91593eb043%3A0x177209b1d7ee5025!2sGadel%20Roosted%20Chicken!5e0!3m2!1sen!2slb!4v1719744454793!5m2!1sen!2slb"
+          width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-bottom">
+      <p>
+        &copy; 2024 <span>GADEL</span> Made with &#10084;&#65039; By
+        <a href="https://github.com/Waelalhamad/">Wael Alhamad</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Flags Icon -->
+  <div class="lang">
+    <a href="pages/index-es.html" class="fi fi-es fis"></a>
+    <a class="fi fi-us fis" id="english"></a>
+  </div>
+
+  <!-- Whatsapp Icon -->
+  <a href="https://wa.me/0096178941518" target="_blank" class="whatsapp">
+    <ion-icon name="logo-whatsapp" class="whatsapp-icon"></ion-icon>
+  </a>
+
+  <!-- Custom Js -->
+  <script src="JS/main.js"></script>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+  <!-- Icons Library -->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
 </html>
