@@ -220,7 +220,10 @@
 
     <!-- Flags Icon -->
     <div class="lang">
-      <a class="fi fi-es fis" onclick="showAlert('Estás en la página en Español!', 'black');"></a>
+      <a
+        class="fi fi-es fis"
+        onclick="showAlert('Estás en la página en Español!', 'black');"
+      ></a>
       <a href="../../index.html" class="fi fi-us fis"></a>
     </div>
 
@@ -231,6 +234,21 @@
 
     <!-- Custom Js -->
     <script src="../../JS/main-es.js"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-5K0KD3DWKW"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-5K0KD3DWKW");
+    </script>
 
     <!-- Icons Library -->
     <script
