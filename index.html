@@ -18,12 +18,6 @@
     <!-- Website Title -->
     <title>GADEL Roosted Chicken</title>
 
-    <!-- Swiper CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
-
     <!-- Favicon Link -->
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
 
@@ -34,7 +28,7 @@
     />
 
     <!-- Custom Css Link -->
-    <link rel="stylesheet" href="/Styles/style.css" />
+    <link rel="stylesheet" href="./Styles/style.css" />
   </head>
 
   <body>
@@ -453,7 +447,8 @@
               <a href="https://maps.app.goo.gl/tcio5nrbc9EcZJAj6">
                 <ion-icon name="location-outline"></ion-icon>
                 <span
-                  >Río S. Salvador 1053, Pueblo Nuevo IV, 66646 Apodaca, N.L., Mexico</span
+                  >Río S. Salvador 1053, Pueblo Nuevo IV, 66646 Apodaca, N.L.,
+                  Mexico</span
                 >
               </a>
             </li>
@@ -508,6 +503,21 @@
       defer
     ></script>
 
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-5K0KD3DWKW"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-5K0KD3DWKW");
+    </script>
+
     <!-- Icons Library -->
     <script
       type="module"
@@ -519,4 +529,3 @@
     ></script>
   </body>
 </html>
-
