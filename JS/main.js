@@ -151,7 +151,7 @@ function showSLider() {
 let cartItems = [];
 let cartCount = 0;
 let totalPrice = 0;
-const phoneNumber = '00528196907343';
+const phoneNumber = '528196907343';
 
 
 // DOM Elements
@@ -303,7 +303,7 @@ function formatCart(cartItems, totalPrice) {
 function getWhatsAppURL(cartItems, totalPrice, phoneNumber) {
   const message = formatCart(cartItems, totalPrice);
   const encodedMessage = encodeURIComponent(message);
-  return `https://wa.me/${phoneNumber}/?text=${encodedMessage}`;
+  return `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
 }
 
 function getWhatsAppURL(cartItems, totalPrice, phoneNumber) {
