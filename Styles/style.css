@@ -885,35 +885,19 @@ header .container {
 /* --------------  Reviwes Section STYLE -------------- */
 .reviews {
   background-color: var(--second-background-color);
+  overflow: hidden;
 }
-
-.reviews .container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: 20px;
+.reviews .heading {
+  margin-bottom: 0;
 }
-
-.review-item {
-  padding: 1rem;
-  width: 100%;
-  height: 60vh;
-  border-radius: var(--radius-12);
-  background-color: #212121;
-}
-
 /* --------------  Contact Section STYLE -------------- */
-.contact {
-  padding: 60px 0;
-  text-align: center;
-}
 
 .contact .container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: stretch;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .contact .contact-info {
@@ -930,6 +914,7 @@ header .container {
 }
 
 .contact-info h2 {
+  padding: 10px;
   width: 80%;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   text-align: center;
@@ -938,7 +923,7 @@ header .container {
 
 .contact .contact-info ul span {
   color: var(--text-color-white);
-  font-size: .9rem;
+  font-size: 0.9rem;
 }
 
 .contact .contact-info li {
@@ -946,6 +931,10 @@ header .container {
   margin: 15px 0;
   display: flex;
   align-items: center;
+}
+
+.contact .contact-info li a {
+  margin: 0;
 }
 
 .contact .contact-info ion-icon {
@@ -957,9 +946,11 @@ header .container {
   margin-right: 10px;
   flex-shrink: 0;
 }
+
 .contact .contact-info a {
   margin-top: 30px;
 }
+
 
 .contact .location {
   flex: 1 1 100%;
@@ -985,7 +976,7 @@ header .container {
 
   .contact .contact-info,
   .contact .location {
-    max-width: 100%;
+    width: 100%;
     margin-right: 0;
   }
 
