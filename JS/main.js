@@ -151,7 +151,7 @@ function showSLider() {
 let cartItems = [];
 let cartCount = 0;
 let totalPrice = 0;
-const phoneNumber = '528196907343';
+const phoneNumber = '528123681120';
 
 
 // DOM Elements
