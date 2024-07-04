@@ -265,14 +265,30 @@ function changeItemCount(title, countChange) {
 // Add event listeners to menu buttons
 addToCartButtons.forEach(button => {
   button.addEventListener('click', addToCart);
-  cart.classList.add('open');
+});
+
+// Event listener to close the cart when clicking outside of it
+document.addEventListener('click', (event) => {
+  if (!cart.contains(event.target) && !cartIcon.contains(event.target)) {
+    cart.classList.remove('open');
+  }
+});
+
+// Stop propagation for clicks inside the cart
+cart.addEventListener('click', (event) => {
+  event.stopPropagation();
+});
+
+// Stop propagation for cart icon clicks
+cartIcon.addEventListener('click', (event) => {
+  event.stopPropagation();
 });
 
 function formatCart(cartItems, totalPrice) {
   let message = 'Cart Details:\n \n';
 
   cartItems.forEach(item => {
-      message += `${item.title} (x${item.count}): $${(item.price * item.count).toFixed(2)}\n \n \n`;
+      message += `${item.title} (x${item.count}): $${(item.price * item.count).toFixed(2)}\n \n`;
   });
 
   message += `Subtotal: $${totalPrice.toFixed(2)}`;
