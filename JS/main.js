@@ -291,9 +291,6 @@ checkoutButton.addEventListener('click', () => {
   window.open(whatsappURL, '_blank');
 });
 
-
-
-
 /*******************************************************************************************************
  *                                                                                                      *
  *                                           Menu Filter                                                *
