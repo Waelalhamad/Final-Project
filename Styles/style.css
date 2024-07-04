@@ -237,7 +237,7 @@ header .container {
 
 .logo h2 {
   font-size: var(--h2-size);
-  font-weight: 700;
+  font-weight: 600;
   color: var(--primary-color);
   letter-spacing: 2px;
 }
@@ -294,31 +294,34 @@ header .container {
 
 .nav-icons {
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
 .nav-icons a {
   color: var(--text-color-white);
   font-size: var(--h3-size);
-  margin-left: 20px;
+  margin-left: 10px;
   transition: color var(--transition-1);
 }
 
-.cart-icon ion-icon {
+.nav-icons ion-icon {
   font-size: xx-large;
   vertical-align: middle;
 }
 
-.cart-icon {
+.cart-icon,
+.wishlist-icon {
   width: 48px;
   position: relative;
   cursor: pointer;
 
 }
 
-.nav-icons .cart-count {
+.nav-icons .cart-count,
+.nav-icons .wishlist-count {
   top: 0;
-  right: -2px;
+  right: 4px;
   text-align: center;
   position: absolute;
   background-color: var(--primary-color);
@@ -327,6 +330,7 @@ header .container {
   height: 20px;
   font-size: small;
   border-radius: var(--radius-circle);
+  z-index: 10;
 }
 
 
@@ -344,7 +348,8 @@ header .container {
 }
 
 .cart.open {
-  transform: translateX(0);
+  box-shadow: -4px 0 10px rgba(255, 255, 255, 0.2);
+  transform: translateX(0) !important;
 }
 
 .cart-content {

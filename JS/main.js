@@ -153,7 +153,6 @@ let cartCount = 0;
 let totalPrice = 0;
 const phoneNumber = '528123681120';
 
-
 // DOM Elements
 const cartBody = document.querySelector('.cart-body');
 const cartIconCount = document.querySelector('.cart-icon .cart-count span');
@@ -165,15 +164,12 @@ const closeBtn = document.querySelector('.close-btn');
 const addToCartButtons = document.querySelectorAll('.add-to-cart');
 const checkoutButton = document.getElementById('checkout');
 
-
 // Open and close cart event listeners
 cartIcon.addEventListener('click', () => {
-  cart.style.boxShadow = "-4px 0 10px rgba(255, 255, 255, 0.2)";
   cart.classList.add('open');
 });
 
 closeBtn.addEventListener('click', () => {
-  cart.style.boxShadow = "none";
   cart.classList.remove('open');
 });
 
@@ -182,7 +178,7 @@ function addToCart(event) {
   const menuItem = event.target.closest('.menu-item');
   const title = menuItem.querySelector('h2').textContent;
   const priceText = menuItem.querySelector(".price").innerText;
-  const price = parseFloat(priceText.replace("Price: $", ""));
+  const price = parseFloat(priceText.replace("$", ""));
   const imgSrc = menuItem.querySelector('img').src;
 
   // Check if item already in cart
@@ -245,7 +241,7 @@ function updateCart() {
   }
 
   // Update total price in cart
-  totalPriceElement.textContent = `$${totalPrice}`;
+  totalPriceElement.textContent = `$${totalPrice.toFixed(2)}`;
 }
 
 // Function to remove item from cart
@@ -269,30 +265,14 @@ function changeItemCount(title, countChange) {
 // Add event listeners to menu buttons
 addToCartButtons.forEach(button => {
   button.addEventListener('click', addToCart);
-});
-
-// Event listener to close the cart when clicking outside of it
-document.addEventListener('click', (event) => {
-  if (!cart.contains(event.target) && !cartIcon.contains(event.target)) {
-    cart.classList.remove('open');
-  }
-});
-
-// Stop propagation for clicks inside the cart
-cart.addEventListener('click', (event) => {
-  event.stopPropagation();
-});
-
-// Stop propagation for cart icon clicks
-cartIcon.addEventListener('click', (event) => {
-  event.stopPropagation();
+  cart.classList.add('open');
 });
 
 function formatCart(cartItems, totalPrice) {
-  let message = 'Cart Details:\n';
+  let message = 'Cart Details:\n \n';
 
   cartItems.forEach(item => {
-      message += `${item.title} (x${item.count}): $${(item.price * item.count).toFixed(2)}\n`;
+      message += `${item.title} (x${item.count}): $${(item.price * item.count).toFixed(2)}\n \n \n`;
   });
 
   message += `Subtotal: $${totalPrice.toFixed(2)}`;
@@ -303,22 +283,13 @@ function formatCart(cartItems, totalPrice) {
 function getWhatsAppURL(cartItems, totalPrice, phoneNumber) {
   const message = formatCart(cartItems, totalPrice);
   const encodedMessage = encodeURIComponent(message);
-  return `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
-}
-
-function getWhatsAppURL(cartItems, totalPrice, phoneNumber) {
-  const message = formatCart(cartItems, totalPrice);
-  const encodedMessage = encodeURIComponent(message);
   return `https://wa.me/${phoneNumber}/?text=${encodedMessage}`;
 }
-
 
 checkoutButton.addEventListener('click', () => {
   const whatsappURL = getWhatsAppURL(cartItems, totalPrice, phoneNumber);
   window.open(whatsappURL, '_blank');
 });
-
-
 
 
 
