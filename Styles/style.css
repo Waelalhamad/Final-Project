@@ -253,7 +253,7 @@ header .container {
 }
 
 .nav-links li {
-  margin: 0 15px;
+  margin: 0 12px;
 }
 
 .nav-links li a {
@@ -933,9 +933,10 @@ header .container {
 .reviews .heading {
   margin-bottom: 0;
 }
-/* --------------  Contact Section STYLE -------------- */
 
-.contact .container {
+/* --------------  Location Section STYLE -------------- */
+
+.location .container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -943,7 +944,7 @@ header .container {
   margin-bottom: 30px;
 }
 
-.contact .contact-info {
+.location .contact-info {
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -965,19 +966,19 @@ header .container {
   text-align: center;
 }
 
-.contact .contact-info ul p {
+.contact-info ul p {
   display: inline;
   color: var(--text-color-white);
   font-size: 0.9rem;
 }
 
-.contact .contact-info li {
+.contact-info li {
   cursor: pointer;
   display: flex;
   align-items: center;
 }
 
-.contact .contact-info ion-icon {
+.contact-info ion-icon {
   font-size: 1.5rem;
   color: var(--primary-color);
   width: 1.5rem;
@@ -986,31 +987,37 @@ header .container {
   flex-shrink: 0;
 }
 
-.contact .contact-info a {
+.contact-info a {
   margin-top: 30px;
 }
 
-.contact .location {
+.location .location {
   flex: 1 1 100%;
   max-width: 600px;
   border-radius: 8px;
   height: 400px;
 }
 
-.contact .location iframe {
+.location iframe {
   width: 100%;
   height: 100%;
   border: 0;
   border-radius: var(--radius-12);
 }
 
+
+/* --------------  Location Section STYLE -------------- */
+.contact {
+  background-color: var(--second-background-color);
+}
+
+
 /* -------------- Footer STYLE -------------- */
 
 footer {
-  background-color: var(--second-background-color);
+  background-color: var(--black);
   color: var(--text-color-white);
   padding: 10px 40px;
-  border-top-left-radius: 80px;
 }
 
 footer .footer-content {
@@ -1033,7 +1040,7 @@ footer .footer-col {
 }
 
 footer .footer-col h2 {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.4);
   margin-bottom: 20px;
   letter-spacing: 1px;
@@ -1074,7 +1081,7 @@ footer ion-icon {
 }
 
 footer input {
-  background-color: #212121;
+  background-color: #292929;
   padding: 10px;
   border: none;
   outline: var(--primary-color);
@@ -1104,8 +1111,11 @@ footer button[type="submit"]:hover {
 }
 
 footer .footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   text-align: center;
+  width: 100%;
   margin-top: 20px;
+  padding-top: 10px;
 }
 
 footer .footer-bottom p {
