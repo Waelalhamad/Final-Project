@@ -64,7 +64,7 @@
       <div class="container">
         <a href="#" class="logo">
           <img src="images/logo.svg" alt="Logo" class="logo-img" />
-          <h2>GADEL</h2>
+          <h3>GADEL</h3>
         </a>
         <nav class="main-nav">
           <ul class="nav-links">
@@ -76,11 +76,8 @@
           </ul>
         </nav>
         <div class="nav-icons">
-          <a href="#" class="wishlist-icon">
-            <ion-icon name="heart-outline"></ion-icon>
-            <div class="wishlist-count">
-              <span>0</span>
-            </div>
+          <a href="#" class="profile-icon">
+            <ion-icon name="person-outline"></ion-icon>
           </a>
           <a class="cart-icon">
             <ion-icon name="cart-outline"></ion-icon>
@@ -92,29 +89,28 @@
       </div>
     </header>
 
-<!-- bottom Navbar -->
-<nav class="bottom-nav">
-  <a href="#menu" class="menu-icon">
-      <ion-icon name="restaurant-outline"></ion-icon>
-      <span class="icon-bottom">Menu</span>
-  </a>
-  <a class="cart-icon">
-      <ion-icon name="cart-outline"></ion-icon>
-      <div class="cart-count">
+    <!-- bottom Navbar -->
+    <nav class="bottom-nav">
+      <a href="#menu" class="menu-icon">
+        <ion-icon name="restaurant-outline"></ion-icon>
+        <span class="icon-bottom">Menu</span>
+      </a>
+      <a class="cart-icon">
+        <ion-icon name="cart-outline"></ion-icon>
+        <div class="cart-count">
           <span>0</span>
-      </div>
-      <span class="icon-bottom">Cart</span>
-  </a>
-  <a href="#" class="profile-icon">
-      <ion-icon name="person-outline"></ion-icon>
-      <span class="icon-bottom">Profile</span>
-  </a>
-  <a href="#" class="contact-icon">
-      <ion-icon name="call-outline"></ion-icon>
-      <span class="icon-bottom">Contact</span>
-  </a>
-</nav>
-
+        </div>
+        <span class="icon-bottom">Cart</span>
+      </a>
+      <a href="#" class="profile-icon">
+        <ion-icon name="person-outline"></ion-icon>
+        <span class="icon-bottom">Profile</span>
+      </a>
+      <a href="#" class="contact-icon">
+        <ion-icon name="call-outline"></ion-icon>
+        <span class="icon-bottom">Contact</span>
+      </a>
+    </nav>
 
     <!-- Slide Cart -->
     <div class="cart">
@@ -261,7 +257,11 @@
         <div class="menu-list">
           <div class="menu-item chicken-meals all">
             <div class="menu-img">
-              <img src="menu/chicken.png" alt="Grilled Chicken" loading="lazy" />
+              <img
+                src="menu/chicken.png"
+                alt="Grilled Chicken"
+                loading="lazy"
+              />
             </div>
             <div class="menu-content">
               <h2>1 Grilled Chicken</h2>
@@ -476,11 +476,17 @@
             <li>
               <a href="https://maps.app.goo.gl/tcio5nrbc9EcZJAj6">
                 <ion-icon name="location-outline"></ion-icon>
-                <p>Río S. Salvador 1053, Pueblo Nuevo IV, 66646 Apodaca, N.L., Mexico</p>
+                <p>
+                  Río S. Salvador 1053, Pueblo Nuevo IV, 66646 Apodaca, N.L.,
+                  Mexico
+                </p>
               </a>
             </li>
           </ul>
-          <a href="https://maps.app.goo.gl/tcio5nrbc9EcZJAj6" target="_blank" class="btn"
+          <a
+            href="https://maps.app.goo.gl/tcio5nrbc9EcZJAj6"
+            target="_blank"
+            class="btn"
             >Google Maps</a
           >
         </div>
@@ -499,6 +505,48 @@
 
     <!-- Footer -->
     <footer>
+      <div class="footer-content">
+        <div class="footer-col">
+          <a href="#" class="logo">
+            <img src="images/logo.svg" alt="Chicken Logo" class="logo-img" />
+            <h3>GADEL</h3>
+          </a>
+          <p>
+            Gabriel started at a local roasted chicken restaurant. In 2019, he
+            turned his backyard into a roasted chicken restaurant.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h2>Quick<span>links</span></h2>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h2>Opening <span>Hours</span></h2>
+          <ul>
+            <li>
+              <ion-icon name="time-outline"></ion-icon>
+              <p>Saturdays: 10 AM - 9 PM</p>
+            </li>
+            <li>
+              <ion-icon name="time-outline"></ion-icon>
+              <p>Sundays: 10 AM - 9 PM</p>
+            </li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h2>News<span>letter</span></h2>
+          <form>
+            <input type="email" placeholder="Enter Your Email:" required />
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
       <div class="footer-bottom">
         <p>
           &copy; 2024 <span>GADEL</span> Made with &#10084;&#65039; By

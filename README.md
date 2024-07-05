@@ -5,7 +5,7 @@ Brief description or introduction to your project.
 ## Table of Contents
 
 - [Features](#features)
-- [Demo](#demo)
+- [Demo](https://waelalhamad.github.io/Final-Project/)
 - [Installation](#installation)
 - [Usage](#usage)
 - [License](#license)
@@ -18,12 +18,12 @@ Brief description or introduction to your project.
 
 ## Demo
 
-[Project Demo](https://www.example.com)
+[Project Demo](https://waelalhamad.github.io/Final-Project/)
 
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/your-username/repository-name.git`
-2. Navigate into the project directory: `cd repository-name`
+1. Clone the repository: `https://github.com/Waelalhamad/Final-Project.git`
+2. Navigate into the project directory: `cd Final-Project`
 3. Open `index.html` in your web browser.
 
 ## Usage
