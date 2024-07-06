@@ -113,11 +113,11 @@ img {
 }
 
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background-color: transparent;
+  background-color: rgb(94, 94, 94);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -548,9 +548,8 @@ header .container {
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  height: 100px;
-  padding: 10px;
-  box-shadow: 0 0 9px rgba(0, 0, 0, 0.12);
+  padding: 5px;
+  box-shadow: 0 0 9px rgba(255, 255, 255, 0.2);
   background-color: var(--black);
   z-index: 1000;
 }
@@ -560,6 +559,7 @@ header .container {
   height: 25px;
   color: var(--text-color-white);
   position: relative;
+  cursor: pointer;
 }
 
 .bottom-nav a {
@@ -574,14 +574,18 @@ header .container {
 }
 
 .bottom-nav .cart-count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
-  top: -5px;
-  right: 24px;
+  top: -2px;
+  right: 30px;
   background-color: var(--primary-color);
   color: var(--text-color);
   border-radius: 50%;
-  padding: 2px 5px;
   font-size: 10px;
+  width: 15px;
+  height: 15px;
 }
 
 .bottom-nav .icon-bottom {
@@ -780,6 +784,7 @@ header .container {
 .about-img:hover img {
   transform: scale(1.1);
 }
+
 
 /* --------------  Menu Section STYLE -------------- */
 .menu {
@@ -1006,9 +1011,54 @@ header .container {
 }
 
 
-/* --------------  Location Section STYLE -------------- */
+/* --------------  Contact Section STYLE -------------- */
 .contact {
   background-color: var(--second-background-color);
+  height: auto;
+  margin-bottom: 30px;
+}
+.contact.dark-mode {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  padding: 50px 0;
+}
+
+.contact .container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.contact .contact-form {
+  text-align: center;
+}
+
+.contact .contact-form h2 {
+  margin-bottom: 20px;
+}
+
+.contact .form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.contact label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.contact input[type="text"],
+.contact input[type="email"],
+.contact textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #666;
+  background-color: #333;
+  color: #fff;
+}
+
+.contact textarea {
+  resize: vertical;
 }
 
 
@@ -1018,6 +1068,7 @@ footer {
   background-color: var(--black);
   color: var(--text-color-white);
   padding: 10px 40px;
+  border-top-left-radius: 90px;
 }
 
 footer .footer-content {
@@ -1028,10 +1079,11 @@ footer .footer-content {
 }
 
 footer .logo {
-  margin-top: 20px;
+  margin-top: 60px;
 }
 
 footer .footer-col {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -1093,6 +1145,7 @@ footer input {
 }
 
 footer button {
+  width: 100%;
   margin-top: 10px;
   padding: 5px 10px;
   font-size: 16px;
@@ -1191,6 +1244,9 @@ footer .footer-bottom a:hover {
 
 /* Mobile Devices */
 @media only screen and (min-width: 320px) and (max-width: 480px) {
+  ::-webkit-scrollbar {
+    display: none;
+  }  
   section {
     padding: 40px 8%;
     height: auto;
