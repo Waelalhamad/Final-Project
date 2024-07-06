@@ -8,8 +8,8 @@ const header = document.querySelector("header");
 const navLinks = document.querySelectorAll(".nav-links li a");
 const sections = document.querySelectorAll("section");
 
-const whatsapp = document.querySelector(".whatsapp")
-const lang = document.querySelector(".lang")
+const whatsapp = document.querySelector(".whatsapp");
+const lang = document.querySelector(".lang");
 
 // Function to handle scroll event
 function onScroll() {
@@ -85,10 +85,9 @@ function showAlert(message, bg) {
 // Lang Buttons
 const english = document.getElementById("english");
 
-english.addEventListener('click', function () {
-  showAlert('You are on the English page!', 'black');
+english.addEventListener("click", function () {
+  showAlert("You are on the English page!", "black");
 });
-
 
 /*******************************************************************************************************
  *                                                                                                      *
@@ -144,6 +143,106 @@ function showSLider() {
 
 /*******************************************************************************************************
  *                                                                                                      *
+ *                                        Profile Form                                                  *
+ *                                                                                                      *
+ *******************************************************************************************************/
+// profile elements
+const profilePopupEl = document.getElementById("profile-popup");
+const overlay = document.getElementById("overlay");
+const firstNameInput = document.getElementById("first-name");
+const lastNameInput = document.getElementById("last-name");
+const addressInput = document.getElementById("address");
+const phoneNumberInput = document.getElementById("phone-number");
+const cityInput = document.getElementById("city");
+const emailInput = document.getElementById("email");
+const saveMessage = document.getElementById("save-message");
+const saveButton = document.getElementById("saveButton");
+
+// visibility
+function profilePopup() {
+  const overlay = document.getElementById("overlay");
+  if (profilePopupEl.style.display === "block") {
+    profilePopupEl.style.display = "none";
+    overlay.style.display = "none";
+  } else {
+    profilePopupEl.style.display = "block";
+    overlay.style.display = "block";
+  }
+}
+
+function resetProfile() {
+  showAlert("Profile Reset", "black");
+  firstNameInput.value = "";
+  lastNameInput.value = "";
+  addressInput.value = "";
+  phoneNumberInput.value = "";
+  cityInput.value = "";
+  emailInput.value = "";
+
+  // Enable form
+  formFieldsFn(true);
+  saveButton.innerText = "Save";
+}
+
+function saveProfile() {
+  const firstName = firstNameInput.value;
+  const lastName = lastNameInput.value;
+  const address = addressInput.value;
+  const phoneNumber = phoneNumberInput.value;
+  const city = cityInput.value;
+  const email = emailInput.value;
+
+  if (!firstName || !lastName || !address || !phoneNumber || !city || !email) {
+    showAlert("Please fill out all fields.", "red");
+    return;
+  }
+
+  saveMessage.style.display = "block";
+  saveMessage.style.color = "green";
+  setTimeout(() => {
+    saveMessage.style.display = "none";
+  }, 2000);
+
+  // Lock the form
+  formFieldsFn(false);
+  saveButton.innerText = "Edit";
+}
+
+// form state
+function formFieldsFn(enabled) {
+  const formFields = document.querySelectorAll("#profileForm input, #profileForm select");
+  formFields.forEach(field => {
+    field.disabled = !enabled;
+  });
+}
+
+function saveEdit() {
+  if (saveButton.innerText === "Save") {
+    saveProfile();
+  } else {
+    formFieldsFn(true);
+    saveButton.innerText = "Save";
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const formFields = document.querySelectorAll(
+    "#profileForm input, #profileForm select"
+  );
+  let isEmpty = true;
+  formFields.forEach((field) => {
+    if (field.value !== "") {
+      isEmpty = false;
+    }
+  });
+  formFieldsFn(isEmpty);
+
+  saveButton.addEventListener("click", saveEdit);
+  document.querySelector(".reset").addEventListener("click", resetProfile);
+});
+
+/*******************************************************************************************************
+ *                                                                                                      *
  *                                         Slide Cart                                                   *
  *                                                                                                      *
  *******************************************************************************************************/
@@ -151,38 +250,38 @@ function showSLider() {
 let cartItems = [];
 let cartCount = 0;
 let totalPrice = 0;
-const phoneNumber = '528123681120';
+const waPhoneNumber = "528123681120";
 
 // DOM Elements
-const cartBody = document.querySelector('.cart-body');
-const cartIconCount = document.querySelector('.cart-icon .cart-count span');
-const cartTitleCount = document.querySelector('.cart-title span');
-const totalPriceElement = document.querySelector('.cart-bottom .total span');
-const cartIcon = document.querySelector('.cart-icon');
-const cart = document.querySelector('.cart');
-const closeBtn = document.querySelector('.close-btn');
-const addToCartButtons = document.querySelectorAll('.add-to-cart');
-const checkoutButton = document.getElementById('checkout');
+const cartBody = document.querySelector(".cart-body");
+const cartIconCount = document.querySelector(".cart-icon .cart-count span");
+const cartTitleCount = document.querySelector(".cart-title span");
+const totalPriceElement = document.querySelector(".cart-bottom .total span");
+const cartIcon = document.querySelector(".cart-icon");
+const cart = document.querySelector(".cart");
+const closeBtn = document.querySelector(".close-btn");
+const addToCartButtons = document.querySelectorAll(".add-to-cart");
+const checkoutButton = document.getElementById("checkout");
 
 // Open and close cart event listeners
-cartIcon.addEventListener('click', () => {
-  cart.classList.add('open');
+cartIcon.addEventListener("click", () => {
+  cart.classList.add("open");
 });
 
-closeBtn.addEventListener('click', () => {
-  cart.classList.remove('open');
+closeBtn.addEventListener("click", () => {
+  cart.classList.remove("open");
 });
 
 // Function to add item to cart
 function addToCart(event) {
-  const menuItem = event.target.closest('.menu-item');
-  const title = menuItem.querySelector('h2').textContent;
+  const menuItem = event.target.closest(".menu-item");
+  const title = menuItem.querySelector("h2").textContent;
   const priceText = menuItem.querySelector(".price").innerText;
   const price = parseFloat(priceText.replace("$", ""));
-  const imgSrc = menuItem.querySelector('img').src;
+  const imgSrc = menuItem.querySelector("img").src;
 
   // Check if item already in cart
-  const existingItemIndex = cartItems.findIndex(item => item.title === title);
+  const existingItemIndex = cartItems.findIndex((item) => item.title === title);
 
   if (existingItemIndex !== -1) {
     cartItems[existingItemIndex].count += 1;
@@ -195,11 +294,11 @@ function addToCart(event) {
 
 // Function to update the cart display
 function updateCart() {
-  cartBody.innerHTML = '';
+  cartBody.innerHTML = "";
   cartCount = 0;
   totalPrice = 0;
 
-  cartItems.forEach(item => {
+  cartItems.forEach((item) => {
     cartCount += item.count;
     totalPrice += item.price * item.count;
 
@@ -214,12 +313,18 @@ function updateCart() {
         <div class="item-content">
           <div class="item-info">
             <h2 class="item-title">${item.title}</h2>
-            <p class="item-price">Price: <span>$${item.price.toFixed(2)}</span></p>
+            <p class="item-price">Price: <span>$${item.price.toFixed(
+              2
+            )}</span></p>
           </div>
           <div class="item-action">
-            <button class="item-btn" onclick="changeItemCount('${item.title}', -1)"><ion-icon name="remove-outline"></ion-icon></button>
+            <button class="item-btn" onclick="changeItemCount('${
+              item.title
+            }', -1)"><ion-icon name="remove-outline"></ion-icon></button>
             <div class="item-count"><span>${item.count}</span></div>
-            <button class="item-btn" onclick="changeItemCount('${item.title}', 1)"><ion-icon name="add-outline"></ion-icon></button>
+            <button class="item-btn" onclick="changeItemCount('${
+              item.title
+            }', 1)"><ion-icon name="add-outline"></ion-icon></button>
           </div>
         </div>
       </div>
@@ -246,13 +351,13 @@ function updateCart() {
 
 // Function to remove item from cart
 function removeFromCart(title) {
-  cartItems = cartItems.filter(item => item.title !== title);
+  cartItems = cartItems.filter((item) => item.title !== title);
   updateCart();
 }
 
 // Function to change item count
 function changeItemCount(title, countChange) {
-  const item = cartItems.find(item => item.title === title);
+  const item = cartItems.find((item) => item.title === title);
   item.count += countChange;
 
   if (item.count <= 0) {
@@ -263,48 +368,62 @@ function changeItemCount(title, countChange) {
 }
 
 // Add event listeners to menu buttons
-addToCartButtons.forEach(button => {
-  button.addEventListener('click', addToCart);
+addToCartButtons.forEach((button) => {
+  button.addEventListener("click", addToCart);
 });
 
 // Event listener to close the cart when clicking outside of it
-document.addEventListener('click', (event) => {
+document.addEventListener("click", (event) => {
   if (!cart.contains(event.target) && !cartIcon.contains(event.target)) {
-    cart.classList.remove('open');
+    cart.classList.remove("open");
   }
 });
 
 // Stop propagation for clicks inside the cart
-cart.addEventListener('click', (event) => {
+cart.addEventListener("click", (event) => {
   event.stopPropagation();
 });
 
 // Stop propagation for cart icon clicks
-cartIcon.addEventListener('click', (event) => {
+cartIcon.addEventListener("click", (event) => {
   event.stopPropagation();
 });
-
 function formatCart(cartItems, totalPrice) {
-  let message = 'Cart Details:\n \n';
+  let message = "Cart Details:\n \n";
 
-  cartItems.forEach(item => {
-      message += `${item.title} (x${item.count}): $${(item.price * item.count).toFixed(2)}\n \n`;
+  cartItems.forEach((item) => {
+    message += `${item.title} (x${item.count}): $${(item.price * item.count).toFixed(2)}\n \n`;
   });
 
-  message += `Subtotal: $${totalPrice.toFixed(2)}`;
+  // Add delivery cost
+  message += `Delivery Cost: $25.00\n`;
+
+  // Update total price including delivery
+  totalPrice += 25;
+  message += `Total (including delivery): $${totalPrice.toFixed(2)}\n`;
+
+  // Add profile information
+  message += "\nProfile Information:\n";
+  message += `First Name: ${firstNameInput.value}\n`;
+  message += `Last Name: ${lastNameInput.value}\n`;
+  message += `Address: ${addressInput.value}\n`;
+  message += `Phone Number: ${phoneNumberInput.value}\n`;
+  message += `City: ${cityInput.value}\n`;
+  message += `Email: ${emailInput.value}\n`;
 
   return message;
 }
 
-function getWhatsAppURL(cartItems, totalPrice, phoneNumber) {
+function getWhatsAppURL(cartItems, totalPrice, waPhoneNumber) {
   const message = formatCart(cartItems, totalPrice);
   const encodedMessage = encodeURIComponent(message);
-  return `https://wa.me/${phoneNumber}/?text=${encodedMessage}`;
+  return `https://wa.me/${waPhoneNumber}/?text=${encodedMessage}`;
 }
 
-checkoutButton.addEventListener('click', () => {
-  const whatsappURL = getWhatsAppURL(cartItems, totalPrice, phoneNumber);
-  window.open(whatsappURL, '_blank');
+
+checkoutButton.addEventListener("click", () => {
+  const whatsappURL = getWhatsAppURL(cartItems, totalPrice, waPhoneNumber);
+  window.open(whatsappURL, "_blank");
 });
 
 /*******************************************************************************************************
@@ -316,14 +435,14 @@ checkoutButton.addEventListener('click', () => {
 const filterButtons = document.querySelectorAll(".filter-btn");
 const menuItems = document.querySelectorAll(".menu-item");
 
-filterButtons.forEach(button => {
+filterButtons.forEach((button) => {
   button.addEventListener("click", function () {
-    filterButtons.forEach(btn => btn.classList.remove("active"));
+    filterButtons.forEach((btn) => btn.classList.remove("active"));
     this.classList.add("active");
 
     const filter = this.getAttribute("data-filter");
 
-    menuItems.forEach(item => {
+    menuItems.forEach((item) => {
       if (filter === "all" || item.classList.contains(filter)) {
         item.classList.add("all");
       } else {
@@ -332,3 +451,32 @@ filterButtons.forEach(button => {
     });
   });
 });
+
+// document.getElementById("phone").addEventListener("blur", function () {
+//   var phoneInput = document.getElementById("phone");
+//   var phoneError = document.getElementById("phone-error");
+//   var phonePattern = /^(\+52)?[1-9]\d{9}$/;
+
+//   if (!phonePattern.test(phoneInput.value)) {
+//     phoneError.textContent = "Please enter a valid Mexican phone number.";
+//     phoneError.style.display = "block";
+//   } else {
+//     phoneError.style.display = "none";
+//   }
+// });
+
+// document.getElementById("contact-form").addEventListener("submit", function (event) {
+//     var phoneInput = document.getElementById("phone");
+//     var phoneError = document.getElementById("phone-error");
+//     var phonePattern = /^(\+52)?[1-9]\d{9}$/;
+
+//     if (!phonePattern.test(phoneInput.value)) {
+//       phoneError.textContent = "Please enter a valid Mexican phone number.";
+//       phoneError.style.display = "block";
+//       event.preventDefault(); // Prevent form submission
+//     } else {
+//       phoneError.style.display = "none";
+//     }
+//   });
+
+

@@ -147,7 +147,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 10000;
+  z-index: 1000000;
 }
 
 /* --------------  Top Nav STYLE -------------- */
@@ -325,6 +325,94 @@ header .container {
   font-size: small;
   border-radius: var(--radius-circle);
   z-index: 10;
+}
+
+/* Popup Profile */
+.profile-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--black);
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+  z-index: 10001;
+  width: 500px;
+  max-width: 80%;
+  border-radius: var(--radius-12);
+}
+
+.profile-popup .heading {
+  font-size: var(--h3-size);
+}
+
+.profile-popup span {
+  color: var(--primary-color);
+}
+
+.profile-popup ion-icon {
+  color: #e63946;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
+.profile-popup .form-group {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.profile-popup .form-group label {
+  flex: 1;
+}
+
+.profile-popup .form-group input,
+.profile-popup .form-group select {
+  flex: 3;
+  padding: 5px;
+  border-radius: var(--radius-8);
+}
+
+.profile-popup .form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.profile-popup .form-actions button {
+  border-radius: var(--radius-4);
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.profile-popup .reset {
+  background-color: #be2330;
+  color: var(--text-color-white);
+}
+
+.profile-popup .save {
+  background-color: green;
+  color: var(--text-color-white);
+}
+
+#saveMessage {
+  margin-top: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 10000;
 }
 
 /* Slide Cart */
@@ -1015,8 +1103,8 @@ header .container {
 .contact {
   background-color: var(--second-background-color);
   height: auto;
-  margin-bottom: 30px;
 }
+
 .contact.dark-mode {
   background-color: #1a1a1a;
   color: #ffffff;
@@ -1049,6 +1137,7 @@ header .container {
 
 .contact input[type="text"],
 .contact input[type="email"],
+.contact input[type="tel"],
 .contact textarea {
   width: 100%;
   padding: 10px;
@@ -1061,6 +1150,18 @@ header .container {
   resize: vertical;
 }
 
+.contact button:disabled {
+  cursor: not-allowed;
+}
+
+.contact .error-message {
+  color: #e63946;
+  font-size: 0.875em;
+  display: none;
+}
+
+
+
 
 /* -------------- Footer STYLE -------------- */
 
@@ -1068,7 +1169,6 @@ footer {
   background-color: var(--black);
   color: var(--text-color-white);
   padding: 10px 40px;
-  border-top-left-radius: 90px;
 }
 
 footer .footer-content {
