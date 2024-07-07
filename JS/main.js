@@ -82,6 +82,10 @@ function showAlert(message, bg) {
   }, 2000);
 }
 
+function hideAlert() {
+  customAlert.style.display = "none";
+}
+
 // Lang Buttons
 const english = document.getElementById("english");
 
@@ -182,6 +186,9 @@ function resetProfile() {
   // Enable form
   formFieldsFn(true);
   saveButton.innerText = "Save";
+
+  // Remove profile from local storage
+  localStorage.removeItem("profile");
 }
 
 function saveProfile() {
@@ -206,14 +213,15 @@ function saveProfile() {
   // Lock the form
   formFieldsFn(false);
   saveButton.innerText = "Edit";
+
+  // Save profile to local storage
+  saveProfileToLocalStorage();
 }
 
 // form state
 function formFieldsFn(enabled) {
   const formFields = document.querySelectorAll("#profileForm input, #profileForm select");
-  formFields.forEach(field => {
-    field.disabled = !enabled;
-  });
+  formFields.forEach(field => field.disabled = !enabled);
 }
 
 function saveEdit() {
@@ -226,9 +234,7 @@ function saveEdit() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const formFields = document.querySelectorAll(
-    "#profileForm input, #profileForm select"
-  );
+  const formFields = document.querySelectorAll("#profileForm input, #profileForm select");
   let isEmpty = true;
   formFields.forEach((field) => {
     if (field.value !== "") {
@@ -239,6 +245,67 @@ document.addEventListener("DOMContentLoaded", () => {
 
   saveButton.addEventListener("click", saveEdit);
   document.querySelector(".reset").addEventListener("click", resetProfile);
+
+  // Load profile from local storage
+  loadProfileFromLocalStorage();
+});
+
+// Save and load functions for profile
+function saveProfileToLocalStorage() {
+  const profile = {
+    firstName: firstNameInput.value,
+    lastName: lastNameInput.value,
+    address: addressInput.value,
+    phoneNumber: phoneNumberInput.value,
+    city: cityInput.value,
+    email: emailInput.value
+  };
+  localStorage.setItem("profile", JSON.stringify(profile));
+}
+
+function loadProfileFromLocalStorage() {
+  const storedProfile = localStorage.getItem("profile");
+  if (storedProfile) {
+    const profile = JSON.parse(storedProfile);
+    firstNameInput.value = profile.firstName;
+    lastNameInput.value = profile.lastName;
+    addressInput.value = profile.address;
+    phoneNumberInput.value = profile.phoneNumber;
+    cityInput.value = profile.city;
+    emailInput.value = profile.email;
+
+    // Lock the form if profile is filled
+    if (profile.firstName && profile.lastName && profile.address && profile.phoneNumber && profile.city && profile.email) {
+      formFieldsFn(false);
+      saveButton.innerText = "Edit";
+    }
+  }
+}
+
+// Function to check if profile form is filled
+function isProfileFormFilled() {
+  const fields = [
+    firstNameInput.value,
+    lastNameInput.value,
+    addressInput.value,
+    phoneNumberInput.value,
+    cityInput.value,
+    emailInput.value
+  ];
+
+  return fields.every(field => field.trim() !== '');
+}
+
+// Function to update checkout button state
+function updateCheckoutButtonState() {
+  const isProfileValid = isProfileFormFilled();
+  const isCartNotEmpty = cartItems.length > 0;
+  checkoutButton.disabled = !(isProfileValid && isCartNotEmpty);
+}
+
+// Call update checkout button state on input change
+document.querySelectorAll('#profileForm input, #profileForm select').forEach(input => {
+  input.addEventListener('input', updateCheckoutButtonState);
 });
 
 /*******************************************************************************************************
@@ -347,6 +414,12 @@ function updateCart() {
 
   // Update total price in cart
   totalPriceElement.textContent = `$${totalPrice.toFixed(2)}`;
+
+  // Save cart items to local storage
+  saveCartToLocalStorage();
+
+  // Update checkout button state
+  updateCheckoutButtonState();
 }
 
 // Function to remove item from cart
@@ -388,11 +461,12 @@ cart.addEventListener("click", (event) => {
 cartIcon.addEventListener("click", (event) => {
   event.stopPropagation();
 });
+
 function formatCart(cartItems, totalPrice) {
-  let message = "Cart Details:\n \n";
+  let message = "Cart Details:\n\n";
 
   cartItems.forEach((item) => {
-    message += `${item.title} (x${item.count}): $${(item.price * item.count).toFixed(2)}\n \n`;
+    message += `${item.title} (x${item.count}): $${(item.price * item.count).toFixed(2)}\n\n`;
   });
 
   // Add delivery cost
@@ -420,11 +494,42 @@ function getWhatsAppURL(cartItems, totalPrice, waPhoneNumber) {
   return `https://wa.me/${waPhoneNumber}/?text=${encodedMessage}`;
 }
 
-
 checkoutButton.addEventListener("click", () => {
-  const whatsappURL = getWhatsAppURL(cartItems, totalPrice, waPhoneNumber);
-  window.open(whatsappURL, "_blank");
+  const isProfileValid = isProfileFormFilled();
+  const isCartNotEmpty = cartItems.length > 0;
+
+  if (!isProfileValid) {
+    showAlert("Please fill out your profile information", "red");
+    return;
+  }
+
+  if (!isCartNotEmpty) {
+    showAlert("Your cart is empty", "red");
+    return;
+  }
+
+  const waURL = getWhatsAppURL(cartItems, totalPrice, waPhoneNumber);
+  window.open(waURL, "_blank");
 });
+
+// Save and load cart items to local storage
+function saveCartToLocalStorage() {
+  localStorage.setItem("cartItems", JSON.stringify(cartItems));
+}
+
+function loadCartFromLocalStorage() {
+  const savedCartItems = localStorage.getItem("cartItems");
+  if (savedCartItems) {
+    cartItems = JSON.parse(savedCartItems);
+    updateCart();
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  loadCartFromLocalStorage();
+});
+
+
 
 /*******************************************************************************************************
  *                                                                                                      *
@@ -451,6 +556,12 @@ filterButtons.forEach((button) => {
     });
   });
 });
+
+/*******************************************************************************************************
+ *                                                                                                      *
+ *                                         Contact Validation                                           *
+ *                                                                                                      *
+ *******************************************************************************************************/
 
 // document.getElementById("phone").addEventListener("blur", function () {
 //   var phoneInput = document.getElementById("phone");
