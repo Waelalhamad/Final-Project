@@ -220,8 +220,10 @@ function saveProfile() {
 
 // form state
 function formFieldsFn(enabled) {
-  const formFields = document.querySelectorAll("#profileForm input, #profileForm select");
-  formFields.forEach(field => field.disabled = !enabled);
+  const formFields = document.querySelectorAll(
+    "#profileForm input, #profileForm select"
+  );
+  formFields.forEach((field) => (field.disabled = !enabled));
 }
 
 function saveEdit() {
@@ -234,7 +236,9 @@ function saveEdit() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const formFields = document.querySelectorAll("#profileForm input, #profileForm select");
+  const formFields = document.querySelectorAll(
+    "#profileForm input, #profileForm select"
+  );
   let isEmpty = true;
   formFields.forEach((field) => {
     if (field.value !== "") {
@@ -258,7 +262,7 @@ function saveProfileToLocalStorage() {
     address: addressInput.value,
     phoneNumber: phoneNumberInput.value,
     city: cityInput.value,
-    email: emailInput.value
+    email: emailInput.value,
   };
   localStorage.setItem("profile", JSON.stringify(profile));
 }
@@ -275,7 +279,14 @@ function loadProfileFromLocalStorage() {
     emailInput.value = profile.email;
 
     // Lock the form if profile is filled
-    if (profile.firstName && profile.lastName && profile.address && profile.phoneNumber && profile.city && profile.email) {
+    if (
+      profile.firstName &&
+      profile.lastName &&
+      profile.address &&
+      profile.phoneNumber &&
+      profile.city &&
+      profile.email
+    ) {
       formFieldsFn(false);
       saveButton.innerText = "Edit";
     }
@@ -290,10 +301,10 @@ function isProfileFormFilled() {
     addressInput.value,
     phoneNumberInput.value,
     cityInput.value,
-    emailInput.value
+    emailInput.value,
   ];
 
-  return fields.every(field => field.trim() !== '');
+  return fields.every((field) => field.trim() !== "");
 }
 
 // Function to update checkout button state
@@ -304,9 +315,11 @@ function updateCheckoutButtonState() {
 }
 
 // Call update checkout button state on input change
-document.querySelectorAll('#profileForm input, #profileForm select').forEach(input => {
-  input.addEventListener('input', updateCheckoutButtonState);
-});
+document
+  .querySelectorAll("#profileForm input, #profileForm select")
+  .forEach((input) => {
+    input.addEventListener("input", updateCheckoutButtonState);
+  });
 
 /*******************************************************************************************************
  *                                                                                                      *
@@ -466,7 +479,9 @@ function formatCart(cartItems, totalPrice) {
   let message = "Cart Details:\n\n";
 
   cartItems.forEach((item) => {
-    message += `${item.title} (x${item.count}): $${(item.price * item.count).toFixed(2)}\n\n`;
+    message += `${item.title} (x${item.count}): $${(
+      item.price * item.count
+    ).toFixed(2)}\n\n`;
   });
 
   // Add delivery cost
@@ -529,8 +544,6 @@ document.addEventListener("DOMContentLoaded", () => {
   loadCartFromLocalStorage();
 });
 
-
-
 /*******************************************************************************************************
  *                                                                                                      *
  *                                           Menu Filter                                                *
@@ -563,31 +576,30 @@ filterButtons.forEach((button) => {
  *                                                                                                      *
  *******************************************************************************************************/
 
-// document.getElementById("phone").addEventListener("blur", function () {
-//   var phoneInput = document.getElementById("phone");
-//   var phoneError = document.getElementById("phone-error");
-//   var phonePattern = /^(\+52)?[1-9]\d{9}$/;
+const contactForm = document.getElementById("contact-form");
+const contactName = document.querySelector(".contact #name");
+const contactEmail = document.querySelector(".contact #email");
+const contactPhone = document.querySelector(".contact #phone");
+const contactMessage = document.querySelector(".contact #message");
 
-//   if (!phonePattern.test(phoneInput.value)) {
-//     phoneError.textContent = "Please enter a valid Mexican phone number.";
-//     phoneError.style.display = "block";
-//   } else {
-//     phoneError.style.display = "none";
-//   }
-// });
+function sendEmail() {
+  const bodyMessage = `Full Name: ${contactName.value}<br>Email: ${contactEmail.value}<br> Phone Number: ${contactPhone.value}<br> Message: ${contactMessage.value}`;
 
-// document.getElementById("contact-form").addEventListener("submit", function (event) {
-//     var phoneInput = document.getElementById("phone");
-//     var phoneError = document.getElementById("phone-error");
-//     var phonePattern = /^(\+52)?[1-9]\d{9}$/;
+  Email.send({
+    SecureToken: "c187706a-bf7f-4930-95f4-adf48f2ec711",
+    To: "restaurantgadel@gmail.com",
+    From: "restaurantgadel@gmail.com",
+    Subject: "New Form Message",
+    Body: bodyMessage,
+  }).then((message) => {
+    if (message == "OK") {
+      showAlert("Your Message Send Successfully", "green");
+    }
+  });
+}
 
-//     if (!phonePattern.test(phoneInput.value)) {
-//       phoneError.textContent = "Please enter a valid Mexican phone number.";
-//       phoneError.style.display = "block";
-//       event.preventDefault(); // Prevent form submission
-//     } else {
-//       phoneError.style.display = "none";
-//     }
-//   });
+contactForm.addEventListener("submit", (event) => {
+  event.preventDefault();
 
-
+  sendEmail();
+});

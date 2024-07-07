@@ -133,12 +133,9 @@ img {
   transform: translate(-50%, -50%);
   background-color: rgb(0, 0, 0);
   color: white;
-  padding: 10px 20px;
+  padding: 30px;
   border-radius: var(--radius-12);
-  height: 100px;
-  width: 300px;
   text-align: center;
-  font-weight: var(--weight-bold);
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.194);
   display: none;
 }
@@ -682,7 +679,6 @@ header .container {
   margin-top: 2px;
 }
 
-
 /* -------------- Home Section STYLE -------------- */
 .home {
   position: relative;
@@ -873,7 +869,6 @@ header .container {
   transform: scale(1.1);
 }
 
-
 /* --------------  Menu Section STYLE -------------- */
 .menu {
   color: var(--text-color-white);
@@ -1028,6 +1023,9 @@ header .container {
 }
 
 /* --------------  Location Section STYLE -------------- */
+.location{
+  height: auto;
+}
 
 .location .container {
   display: flex;
@@ -1098,17 +1096,10 @@ header .container {
   border-radius: var(--radius-12);
 }
 
-
 /* --------------  Contact Section STYLE -------------- */
 .contact {
   background-color: var(--second-background-color);
   height: auto;
-}
-
-.contact.dark-mode {
-  background-color: #1a1a1a;
-  color: #ffffff;
-  padding: 50px 0;
 }
 
 .contact .container {
@@ -1144,14 +1135,11 @@ header .container {
   border: 1px solid #666;
   background-color: #333;
   color: #fff;
+  border-radius: var(--radius-4);
 }
 
 .contact textarea {
   resize: vertical;
-}
-
-.contact button:disabled {
-  cursor: not-allowed;
 }
 
 .contact .error-message {
@@ -1160,7 +1148,9 @@ header .container {
   display: none;
 }
 
-
+.contact button:disabled {
+  cursor: not-allowed;
+}
 
 
 /* -------------- Footer STYLE -------------- */
@@ -1346,7 +1336,7 @@ footer .footer-bottom a:hover {
 @media only screen and (min-width: 320px) and (max-width: 480px) {
   ::-webkit-scrollbar {
     display: none;
-  }  
+  }
   section {
     padding: 40px 8%;
     height: auto;
@@ -1376,7 +1366,7 @@ footer .footer-bottom a:hover {
   .bottom-nav {
     display: flex;
   }
-  .location  {
+  .location {
     width: 80%;
     overflow: hidden;
   }
