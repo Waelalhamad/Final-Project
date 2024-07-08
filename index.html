@@ -28,7 +28,7 @@
     />
 
     <!-- Custom Css Link -->
-    <link rel="stylesheet" href="./Styles/style.css" />
+    <link rel="stylesheet" href="./Styles/style.min.css" />
   </head>
 
   <body>
@@ -62,6 +62,9 @@
     <!-- Header -->
     <header>
       <div class="container">
+        <a id="nav-menu" class="nav-menu">
+          <ion-icon name="menu-outline"></ion-icon>
+        </a>
         <a href="#" class="logo">
           <img src="images/logo.svg" alt="Logo" class="logo-img" />
           <h3>GADEL</h3>
@@ -90,7 +93,25 @@
       </div>
     </header>
 
-    <!-- Bottom Navbar -->
+    <!-- Slide Menu -->
+    <div id="side-menu" class="side-menu">
+      <a id="close-menu" class="close-menu">
+        <ion-icon name="close-outline"></ion-icon>
+      </a>
+      <ul class="side-nav-links">
+        <li><a href="#home" class="side-nav-link">Home</a></li>
+        <li><a href="#about" class="side-nav-link">About</a></li>
+        <li><a href="#menu" class="side-nav-link">Menu</a></li>
+        <li><a href="#reviews" class="side-nav-link">Reviews</a></li>
+        <li><a href="#location" class="side-nav-link">Location</a></li>
+        <li><a href="#contact" class="side-nav-link">Contact</a></li>
+      </ul>
+    </div>
+    <div id="side-overlay" class="side-overlay"></div>
+
+
+    <!-- Future Work -->
+    <!-- Bottom Navbar
     <nav class="bottom-nav">
       <a href="#menu" class="menu-icon">
         <ion-icon name="restaurant-outline"></ion-icon>
@@ -111,7 +132,7 @@
         <ion-icon name="call-outline"></ion-icon>
         <span class="icon-bottom">Contact</span>
       </a>
-    </nav>
+    </nav> -->
 
     <!-- Profile Form -->
     <div id="profile-popup" class="profile-popup">
@@ -194,7 +215,7 @@
       <div class="slide-list">
         <div class="slide-item active-slide">
           <img
-            src="images/Pictures/gadel8.png"
+            src="./images/gadel8.webp"
             alt=""
             style="object-position: top"
           />
@@ -202,16 +223,15 @@
             <h3><span>Roasted Chicken</span></h3>
             <h1>Premium Roasted Chicken</h1>
             <p>
-              Experience our rich, perfectly prepared roasted chicken, crafted
-              with the finest ingredients for exceptional quality. At Gadel,
+              Experience our rich, perfectly prepared roasted chicken, At Gadel,
               each bite is a taste of culinary excellence.
             </p>
-            <a href="#" class="btn">View Our Menu</a>
+            <a href="#menu" class="btn">View Our Menu</a>
           </div>
         </div>
 
         <div class="slide-item">
-          <img src="images/Pictures/gadel4.png" alt="" />
+          <img src="./images/gadel4.webp" alt="" />
           <div class="slide-content">
             <h3><span>Tasty Creations</span></h3>
             <h1>Exquisite Culinary Creations</h1>
@@ -220,12 +240,12 @@
               ingredients and culinary expertise. At Gadel, satisfaction is
               guaranteed.
             </p>
-            <a href="#" class="btn">View Our Menu</a>
+            <a href="#menu" class="btn">View Our Menu</a>
           </div>
         </div>
 
         <div class="slide-item">
-          <img src="images/Gadel7.webp" alt="" />
+          <img src="./images/Gadel7.webp" alt="" />
           <div class="slide-content">
             <h3><span>Explore Our Menu</span></h3>
             <h1>Culinary Excellence</h1>
@@ -234,7 +254,7 @@
               flavor and quality. At Gadel, each bite is an unforgettable
               experience.
             </p>
-            <a href="#" class="btn">View Our Menu</a>
+            <a href="#menu" class="btn">View Our Menu</a>
           </div>
         </div>
 
@@ -247,7 +267,7 @@
               Taste our premium chicken known for superior quality and taste. At
               Gadel, we deliver excellence in every dish.
             </p>
-            <a href="#" class="btn">View Our Menu</a>
+            <a href="#menu" class="btn">View Our Menu</a>
           </div>
         </div>
       </div>
@@ -279,7 +299,7 @@
         </div>
         <div class="about-img">
           <img
-            src="images/Pictures/Gadel1.png"
+            src="./images/Gadel1.webp"
             alt="Owner Image"
             loading="lazy"
           />
@@ -305,7 +325,7 @@
           <div class="menu-item chicken-meals all">
             <div class="menu-img">
               <img
-                src="menu/chicken.png"
+                src="menu/chicken.webp"
                 alt="Grilled Chicken"
                 loading="lazy"
               />
@@ -333,7 +353,7 @@
           <div class="menu-item chicken-meals all">
             <div class="menu-img">
               <img
-                src="menu/half-chicken.png"
+                src="menu/half-chicken.webp"
                 alt="1/2 Grilled Chicken"
                 loading="lazy"
               />
@@ -361,7 +381,7 @@
           <!-- Packages -->
           <div class="menu-item packages all">
             <div class="menu-img">
-              <img src="menu/package-2.png" alt="Package 1" loading="lazy" />
+              <img src="menu/package-2.webp" alt="Package 1" loading="lazy" />
             </div>
             <div class="menu-content">
               <h2>Package 1</h2>
@@ -386,7 +406,7 @@
 
           <div class="menu-item packages all">
             <div class="menu-img">
-              <img src="menu/package-1.png" alt="Package 2" loading="lazy" />
+              <img src="menu/package-1.webp" alt="Package 2" loading="lazy" />
             </div>
             <div class="menu-content">
               <h2>Package 2</h2>
@@ -412,7 +432,7 @@
           <!-- Additions -->
           <div class="menu-item additions all">
             <div class="menu-img">
-              <img src="menu/Sausages.png" alt="3 Sausages" loading="lazy" />
+              <img src="menu/Sausages.webp" alt="3 Sausages" loading="lazy" />
             </div>
             <div class="menu-content">
               <h2>3 Sausages</h2>
@@ -434,7 +454,7 @@
           <div class="menu-item additions all">
             <div class="menu-img">
               <img
-                src="menu/guacamole-chips.png"
+                src="menu/guacamole-chips.webp"
                 alt="Tortilla Chips with Guacamole"
                 loading="lazy"
               />
@@ -461,7 +481,7 @@
           <div class="menu-item additions all">
             <div class="menu-img">
               <img
-                src="menu/guacamole (2).png"
+                src="menu/guacamole (2).webp"
                 alt="Guacamole"
                 loading="lazy"
               />
@@ -485,7 +505,7 @@
 
           <div class="menu-item additions all">
             <div class="menu-img">
-              <img src="menu/onion.png" alt="Grilled Onions" loading="lazy" />
+              <img src="menu/onion.webp" alt="Grilled Onions" loading="lazy" />
             </div>
             <div class="menu-content">
               <h2>Grilled Onions</h2>
@@ -524,7 +544,7 @@
           <h2>More <span>Info!</span></h2>
           <ul>
             <li>
-              <a href="tel:00528196907343">
+              <a href="tel:00528123681120">
                 <ion-icon name="call-outline"></ion-icon>
                 <p>Phone: +52 81 9690 7343</p>
               </a>
@@ -566,7 +586,7 @@
         <form id="contact-form">
           <div class="form-group">
             <label for="contact-name">Your Name:</label>
-            <input type="text" id="name" class="input" required />
+            <input type="text" id="name" class="input" autocomplete="off" required />
           </div>
           <div class="form-group">
             <label for="contact-email">Your Email:</label>
@@ -625,7 +645,7 @@
         <div class="footer-col">
           <h2>News<span>letter</span></h2>
           <form>
-            <input type="email" placeholder="Enter Your Email:" required />
+            <input type="email" placeholder="Enter Your Email:" id="news" required />
             <button type="submit">Submit</button>
           </form>
         </div>
@@ -640,20 +660,19 @@
 
     <!-- Flags Icon -->
     <div class="lang">
-      <a href="pages/es/index-es.html" class="fi fi-es fis"></a>
+      <a class="fi fi-es fis" id="spanish"></a>
       <a class="fi fi-us fis" id="english"></a>
     </div>
 
     <!-- Whatsapp Icon -->
-    <a href="https://wa.me/0096178941518" target="_blank" class="whatsapp">
+    <a href="https://wa.me/528123681120" target="_blank" class="whatsapp">
       <ion-icon name="logo-whatsapp" class="whatsapp-icon"></ion-icon>
     </a>
 
     <!-- Custom Js -->
-    <script src="JS/main.js"></script>
+    <script src="JS/main.min.js"></script>
 
     <!-- Email Submit API -->
-
     <script src="https://smtpjs.com/v3/smtp.js"></script>    
 
     <!-- Widget Js -->

@@ -11,7 +11,6 @@ const sections = document.querySelectorAll("section");
 const whatsapp = document.querySelector(".whatsapp");
 const lang = document.querySelector(".lang");
 
-// Function to handle scroll event
 function onScroll() {
   let scrollTop = window.pageYOffset;
 
@@ -64,6 +63,30 @@ navLinks.forEach((link) => {
   link.addEventListener("click", onClick);
 });
 
+// Side Menu
+const navMenu = document.getElementById("nav-menu");
+const sideMenu = document.getElementById("side-menu");
+const closeMenu = document.getElementById("close-menu");
+const sideOverlay = document.getElementById("side-overlay");
+const sideNavLinks = document.querySelectorAll(".side-nav-link");
+
+// Function to open the side menu
+function openSideMenu() {
+  sideMenu.style.left = "0";
+  sideOverlay.style.display = "block";
+}
+
+// Function to close the side menu
+function closeSideMenu() {
+  sideMenu.style.left = "-90%";
+  sideOverlay.style.display = "none";
+}
+
+// Event listeners
+navMenu.addEventListener("click", openSideMenu);
+closeMenu.addEventListener("click", closeSideMenu);
+sideOverlay.addEventListener("click", closeSideMenu);
+
 /*******************************************************************************************************
  *                                                                                                      *
  *                                         Custom Alert                                                 *
@@ -82,13 +105,13 @@ function showAlert(message, bg) {
   }, 2000);
 }
 
-function hideAlert() {
-  customAlert.style.display = "none";
-}
-
 // Lang Buttons
 const english = document.getElementById("english");
+const spanish = document.getElementById("spanish");
 
+spanish.addEventListener("click", function () {
+  showAlert("You are on the Sanish page!", "black");
+});
 english.addEventListener("click", function () {
   showAlert("You are on the English page!", "black");
 });
@@ -214,7 +237,6 @@ function saveProfile() {
   formFieldsFn(false);
   saveButton.innerText = "Edit";
 
-  // Save profile to local storage
   saveProfileToLocalStorage();
 }
 
@@ -572,7 +594,7 @@ filterButtons.forEach((button) => {
 
 /*******************************************************************************************************
  *                                                                                                      *
- *                                         Contact Validation                                           *
+ *                                         Contact Email Send                                           *
  *                                                                                                      *
  *******************************************************************************************************/
 
@@ -602,4 +624,34 @@ contactForm.addEventListener("submit", (event) => {
   event.preventDefault();
 
   sendEmail();
+});
+
+/*******************************************************************************************************
+ *                                                                                                      *
+ *                                         NewsLetter Email Send                                        *
+ *                                                                                                      *
+ *******************************************************************************************************/
+const newsLetterForm = document.querySelector("footer form");
+const newsLetterEmail = document.getElementById("news");
+
+function sendNews() {
+  const bodyMessage = `Email: ${newsLetterEmail.value}`;
+
+  Email.send({
+    SecureToken: "c187706a-bf7f-4930-95f4-adf48f2ec711",
+    To: "restaurantgadel@gmail.com",
+    From: "restaurantgadel@gmail.com",
+    Subject: "New News Email",
+    Body: bodyMessage,
+  }).then((message) => {
+    if (message == "OK") {
+      showAlert("Your Email Send Successfully", "green");
+    }
+  });
+}
+
+newsLetterForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  sendNews();
 });
