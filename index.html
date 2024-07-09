@@ -74,10 +74,10 @@
           </ul>
         </nav>
         <div class="nav-icons">
-          <a href="#" class="profile-icon" onclick="profilePopup()">
+          <a href="#" class="profile-icon" onclick="profilePopup()" aria-label="Open Profile">
             <ion-icon name="person-outline"></ion-icon>
           </a>
-          <a href="#" class="cart-icon">
+          <a href="#" class="cart-icon" aria-label="Open Cart">
             <ion-icon name="cart-outline"></ion-icon>
             <div class="cart-count">
               <span>0</span>
@@ -89,9 +89,9 @@
 
     <!-- Slide Menu -->
     <div id="side-menu" class="side-menu">
-      <a id="close-menu" class="close-menu">
+      <div id="close-menu" class="close-menu">
         <ion-icon name="close-outline"></ion-icon>
-      </a>
+      </div>
       <ul class="side-nav-links">
         <li><a href="#home" class="side-nav-link">Home</a></li>
         <li><a href="#about" class="side-nav-link">About</a></li>
