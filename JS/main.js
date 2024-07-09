@@ -105,17 +105,6 @@ function showAlert(message, bg) {
   }, 2000);
 }
 
-// Lang Buttons
-const english = document.getElementById("english");
-const spanish = document.getElementById("spanish");
-
-spanish.addEventListener("click", function () {
-  showAlert("You are on the Sanish page!", "black");
-});
-english.addEventListener("click", function () {
-  showAlert("You are on the English page!", "black");
-});
-
 /*******************************************************************************************************
  *                                                                                                      *
  *                                           Slider                                                     *
