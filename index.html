@@ -109,7 +109,6 @@
     </div>
     <div id="side-overlay" class="side-overlay"></div>
 
-
     <!-- Future Work -->
     <!-- Bottom Navbar
     <nav class="bottom-nav">
@@ -214,11 +213,7 @@
     <section class="home" id="home">
       <div class="slide-list">
         <div class="slide-item active-slide">
-          <img
-            src="./images/gadel8.webp"
-            alt=""
-            style="object-position: top"
-          />
+          <img src="./images/gadel8.webp" alt="" style="object-position: top" />
           <div class="slide-content">
             <h3><span>Roasted Chicken</span></h3>
             <h1>Premium Roasted Chicken</h1>
@@ -272,11 +267,19 @@
         </div>
       </div>
 
-      <button class="slider-btn prev" onclick="prevSlide();" aria-label="Previous Slide">
+      <button
+        class="slider-btn prev"
+        onclick="prevSlide();"
+        aria-label="Previous Slide"
+      >
         <ion-icon name="chevron-back-outline"></ion-icon>
       </button>
 
-      <button class="slider-btn next" onclick="nextSlide();" aria-label="Next Slide">
+      <button
+        class="slider-btn next"
+        onclick="nextSlide();"
+        aria-label="Next Slide"
+      >
         <ion-icon name="chevron-forward-outline"></ion-icon>
       </button>
     </section>
@@ -298,11 +301,7 @@
           <a href="pages/en/about.html" class="btn">Read More..</a>
         </div>
         <div class="about-img">
-          <img
-            src="./images/Gadel1.webp"
-            alt="Owner Image"
-            loading="lazy"
-          />
+          <img src="./images/Gadel1.webp" alt="Owner Image" loading="lazy" />
         </div>
       </div>
     </section>
@@ -568,6 +567,7 @@
         </div>
         <div class="location">
           <iframe
+            title="Google Maps"
             style="filter: invert(90%)"
             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7186.432429924813!2d-100.172622!3d25.763421!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8662eb91593eb043%3A0x177209b1d7ee5025!2sGadel%20Grilled%20Chicken!5e0!3m2!1sen!2slb!4v1719744454793!5m2!1sen!2slb"
             style="border: 0"
@@ -585,25 +585,26 @@
       <div class="container">
         <form id="contact-form">
           <div class="form-group">
-            <label for="contact-name">Your Name:</label>
-            <input type="text" id="name" class="input" autocomplete="off" required />
+            <label for="name">Your Name:</label>
+            <input
+              type="text"
+              id="name"
+              class="input"
+              autocomplete="off"
+              required
+            />
           </div>
           <div class="form-group">
-            <label for="contact-email">Your Email:</label>
+            <label for="email">Your Email:</label>
             <input type="email" id="email" class="input" required />
           </div>
           <div class="form-group">
-            <label for="contact-phone">Your Phone Number:</label>
+            <label for="phone">Your Phone Number:</label>
             <input type="tel" id="phone" class="input" required />
           </div>
           <div class="form-group">
-            <label for="contact-message">Your Message:</label>
-            <textarea
-              id="message"
-              class="input"
-              rows="5"
-              required
-            ></textarea>
+            <label for="message">Your Message:</label>
+            <textarea id="message" class="input" rows="5" required></textarea>
           </div>
           <button class="btn" type="submit">Send Message</button>
         </form>
@@ -645,7 +646,12 @@
         <div class="footer-col">
           <h2>News<span>letter</span></h2>
           <form>
-            <input type="email" placeholder="Enter Your Email:" id="news" required />
+            <input
+              type="email"
+              placeholder="Enter Your Email:"
+              id="news"
+              required
+            />
             <button type="submit" aria-label="Submit Email">Submit</button>
           </form>
         </div>
@@ -673,7 +679,7 @@
     <script src="JS/main.min.js"></script>
 
     <!-- Email Submit API -->
-    <script src="https://smtpjs.com/v3/smtp.js"></script>    
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
 
     <!-- Widget Js -->
     <script
